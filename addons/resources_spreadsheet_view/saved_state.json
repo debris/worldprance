@@ -1,0 +1,14 @@
+{
+  "hidden_columns": {
+    "res://resources/inputs/": {
+      "resource_local_to_scene": true,
+      "resource_name": true
+    }
+  },
+  "recent_paths": [
+    "res://resources/inputs/"
+  ],
+  "table_functions": {
+
+  }
+}

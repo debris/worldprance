@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://b6ufl0rqdaxid"]
+[gd_scene load_steps=30 format=3 uid="uid://b6ufl0rqdaxid"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_of2uh"]
+[ext_resource type="Resource" uid="uid://dca2473f858e5" path="res://resources/inputs/default.tres" id="2_afasx"]
 [ext_resource type="Texture2D" uid="uid://fwrvgwjlnub2" path="res://assets/characters/punk/punk_idle.png" id="2_rqq7y"]
 [ext_resource type="Script" path="res://scripts/look_at.gd" id="3_i3ojf"]
 [ext_resource type="Texture2D" uid="uid://c4au635whnoyj" path="res://assets/characters/punk/punk_run.png" id="4_b8hha"]
@@ -9,7 +10,47 @@
 [ext_resource type="Texture2D" uid="uid://mdr7yxd5bjtg" path="res://assets/characters/punk/punk_doublejump.png" id="5_k4h4s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cyygm"]
-height = 46.0
+radius = 9.0
+height = 34.0
+
+[sub_resource type="Animation" id="Animation_lsxbs"]
+resource_name = "DoubleJump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PunkIdle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_k4h4s")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunkIdle:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PunkIdle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
 
 [sub_resource type="Animation" id="Animation_eqcic"]
 resource_name = "Idle"
@@ -171,45 +212,6 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_lsxbs"]
-resource_name = "DoubleJump"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PunkIdle:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("5_k4h4s")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PunkIdle:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [6]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PunkIdle:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ieqyt"]
 _data = {
 "DoubleJump": SubResource("Animation_lsxbs"),
@@ -261,12 +263,14 @@ states/Run/node = SubResource("AnimationNodeAnimation_sx633")
 states/Run/position = Vector2(710.21, -16.8649)
 states/Start/position = Vector2(169, 50.5)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_6nx3l"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_6ah6e"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_f7w48"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_42oqr"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_uw76t"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_35upw"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_23obq"), "Jump", "DoubleJump", SubResource("AnimationNodeStateMachineTransition_g8xax"), "DoubleJump", "Jump", SubResource("AnimationNodeStateMachineTransition_4m76s")]
-graph_offset = Vector2(146.129, -76.6525)
+graph_offset = Vector2(-34.2161, -103.637)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_of2uh")
+input_keys = ExtResource("2_afasx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_cyygm")
 
 [node name="PunkIdle" type="Sprite2D" parent="."]
@@ -284,11 +288,12 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_vcnqq")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="LookAt" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+[node name="LookAt" type="Node" parent="." node_paths=PackedStringArray("player", "sprite")]
 script = ExtResource("3_i3ojf")
+player = NodePath("..")
 sprite = NodePath("../PunkIdle")
 
-[node name="AnimateMovement" type="Node" parent="." node_paths=PackedStringArray("character", "animation_tree")]
+[node name="AnimateMovement" type="Node" parent="." node_paths=PackedStringArray("player", "animation_tree")]
 script = ExtResource("5_8bra5")
-character = NodePath("..")
+player = NodePath("..")
 animation_tree = NodePath("../AnimationTree")

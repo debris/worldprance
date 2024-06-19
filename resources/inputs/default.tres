@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameInput" load_steps=2 format=3 uid="uid://dca2473f858e5"]
+
+[ext_resource type="Script" path="res://resources/inputs/inputs.gd" id="1_wot74"]
+
+[resource]
+script = ExtResource("1_wot74")
+left = "left"
+up = "up"
+right = "right"
+down = "down"

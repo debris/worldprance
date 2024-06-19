@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GameInput" load_steps=2 format=3 uid="uid://blt14ye6r4b24"]
+
+[ext_resource type="Script" path="res://resources/inputs/inputs.gd" id="1_7cshf"]
+
+[resource]
+script = ExtResource("1_7cshf")
+left = "left_2"
+up = "up_2"
+right = "right_2"
+down = "down_2"
