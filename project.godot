@@ -21,7 +21,7 @@ resources_spreadsheet_view/context_menu_on_leftclick=false
 [application]
 
 config/name="worldprance"
-run/main_scene="res://scenes/root.tscn"
+run/main_scene="res://scenes/levels/root.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
