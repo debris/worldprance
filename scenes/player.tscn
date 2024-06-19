@@ -1,19 +1,189 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6ufl0rqdaxid"]
+[gd_scene load_steps=17 format=3 uid="uid://b6ufl0rqdaxid"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_of2uh"]
+[ext_resource type="Texture2D" uid="uid://fwrvgwjlnub2" path="res://assets/characters/punk/punk_idle.png" id="2_rqq7y"]
+[ext_resource type="Script" path="res://scripts/look_at.gd" id="3_i3ojf"]
+[ext_resource type="Texture2D" uid="uid://c4au635whnoyj" path="res://assets/characters/punk/punk_run.png" id="4_b8hha"]
+[ext_resource type="Script" path="res://scripts/animate_movement.gd" id="5_8bra5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cyygm"]
 height = 46.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(134, 371)
-script = ExtResource("1_of2uh")
+[sub_resource type="Animation" id="Animation_eqcic"]
+resource_name = "Idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PunkIdle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunkIdle:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_rqq7y")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PunkIdle:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+[sub_resource type="Animation" id="Animation_2c2wq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PunkIdle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunkIdle:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_rqq7y")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PunkIdle:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_bl2y4"]
+resource_name = "Run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PunkIdle:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunkIdle:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_b8hha")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PunkIdle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ieqyt"]
+_data = {
+"Idle": SubResource("Animation_eqcic"),
+"RESET": SubResource("Animation_2c2wq"),
+"Run": SubResource("Animation_bl2y4")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4rlfu"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sx633"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6nx3l"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6ah6e"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f7w48"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_vcnqq"]
+states/Idle/node = SubResource("AnimationNodeAnimation_4rlfu")
+states/Idle/position = Vector2(426.71, -16.7399)
+states/Run/node = SubResource("AnimationNodeAnimation_sx633")
+states/Run/position = Vector2(710.21, -16.8649)
+states/Start/position = Vector2(169, 50.5)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_6nx3l"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_6ah6e"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_f7w48")]
+graph_offset = Vector2(245.925, -126.285)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_of2uh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_cyygm")
+
+[node name="PunkIdle" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, -1)
+texture = ExtResource("2_rqq7y")
+offset = Vector2(10, 2.08165e-12)
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ieqyt")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_vcnqq")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="LookAt" type="Node" parent="." node_paths=PackedStringArray("sprite")]
+script = ExtResource("3_i3ojf")
+sprite = NodePath("../PunkIdle")
+
+[node name="AnimateMovement" type="Node" parent="." node_paths=PackedStringArray("animation_tree")]
+script = ExtResource("5_8bra5")
+animation_tree = NodePath("../AnimationTree")

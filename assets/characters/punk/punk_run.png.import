@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doa2vgxm1qr0q"
-path="res://.godot/imported/tileset_normal.png-76fde703b317a7c08eb7061c2490f276.ctex"
+uid="uid://c4au635whnoyj"
+path="res://.godot/imported/punk_run.png-36ea83fdd158b4a34e6db0cc4e1af857.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/tileset_normal.png"
-dest_files=["res://.godot/imported/tileset_normal.png-76fde703b317a7c08eb7061c2490f276.ctex"]
+source_file="res://assets/characters/punk/punk_run.png"
+dest_files=["res://.godot/imported/punk_run.png-36ea83fdd158b4a34e6db0cc4e1af857.ctex"]
 
 [params]
 
