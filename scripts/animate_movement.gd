@@ -6,6 +6,10 @@ class_name AnimateMovement
 @onready var animation_state = animation_tree.get("parameters/playback")
 
 func _process(_delta):
+	if Input.is_action_just_pressed(player.input_keys.attack):
+		animation_state.travel("Attack")
+		return
+
 	var direction = Input.get_axis(player.input_keys.left, player.input_keys.right)
 
 	if not player.is_on_floor():

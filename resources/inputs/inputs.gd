@@ -5,3 +5,4 @@ class_name GameInput
 @export var up: String
 @export var right: String
 @export var down: String
+@export var attack: String
