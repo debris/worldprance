@@ -364,6 +364,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(64.1539, -307.697)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_of2uh")
 input_keys = ExtResource("2_afasx")
 

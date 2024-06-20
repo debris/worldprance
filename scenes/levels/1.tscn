@@ -18,6 +18,7 @@ layer_1/tile_data = PackedInt32Array(917504, 65536, 0, 917505, 65536, 0, 917506,
 [node name="Player" parent="." instance=ExtResource("2_arg2c")]
 position = Vector2(66, 375)
 scale = Vector2(2, 2)
+player_name = "default"
 
 [node name="ChangeLevel" type="Node" parent="." node_paths=PackedStringArray("level")]
 script = ExtResource("3_iqyrd")

@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_w25x5")
 left = "0"
-up = ""
+up = "1-1"
 right = ""
 down = ""

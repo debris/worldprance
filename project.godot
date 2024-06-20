@@ -25,6 +25,10 @@ run/main_scene="res://scenes/levels/root.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+State="*res://global/state.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"
