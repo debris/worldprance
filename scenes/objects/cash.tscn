@@ -49,5 +49,6 @@ shape = SubResource("CircleShape2D_3kk76")
 
 [node name="Collectible" type="Node" parent="." node_paths=PackedStringArray("collectible", "area")]
 script = ExtResource("2_wli3w")
+collectible_name = "cash"
 collectible = NodePath("..")
 area = NodePath("../Area2D")
