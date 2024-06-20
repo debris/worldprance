@@ -18,7 +18,7 @@ layer_1/tile_data = PackedInt32Array(1245204, 196608, 5, 1245203, 196608, 5, 124
 
 [node name="Player" parent="." instance=ExtResource("2_hkne8")]
 position = Vector2(135, 375)
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 player_name = "default"
 
 [node name="ChangeLevel" type="Node" parent="." node_paths=PackedStringArray("level")]

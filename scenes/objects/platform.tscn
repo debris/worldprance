@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1awmjouokcj1"]
+
+[ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_vaupv"]
+[ext_resource type="PackedScene" uid="uid://bl5y3rxxuiwa" path="res://scenes/objects/light.tscn" id="2_8sl5u"]
+[ext_resource type="TileSet" uid="uid://csl1ftnr6oxto" path="res://resources/objects_tileset.tres" id="3_3ewhr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jj3yu"]
+size = Vector2(96, 33)
+
+[node name="Platform" type="Node2D"]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../AnimatableBody2D")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_vaupv")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 3, 1, 65536, 3, 2, 131072, 3)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(48, 16)
+shape = SubResource("RectangleShape2D_jj3yu")
+
+[node name="Light" parent="." instance=ExtResource("2_8sl5u")]
+position = Vector2(48, 32)
+
+[node name="ObjectsTileMap" type="TileMap" parent="."]
+position = Vector2(2.08165e-12, 8)
+tile_set = ExtResource("3_3ewhr")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131068, 983042, 9, -65532, 983042, 10, -131067, 1048578, 9, -65531, 1048578, 10, -131072, 1376258, 9, -65536, 1376258, 10, -131071, 917506, 9, -65535, 917506, 10, -131070, 917506, 9, -65534, 917506, 10, -131069, 917506, 9, -65533, 917506, 10)
