@@ -26,6 +26,9 @@ func _process(_delta):
 			return
 
 func change_level(player_name: String, level_name: String, change: Vector2):
+	if level_name == null || level_name.length() == 0:
+		return
+
 	var player_data = State.get_player_data(player_name)
 	player_data.position += change
 	get_tree().change_scene_to_file("scenes/levels/" + level_name + ".tscn")

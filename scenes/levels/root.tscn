@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dq6vkdcavn1fd"]
+[gd_scene load_steps=8 format=3 uid="uid://dq6vkdcavn1fd"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_os21m"]
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_vmom2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://blt14ye6r4b24" path="res://resources/inputs/player2.tres" id="3_qt2qk"]
 [ext_resource type="Script" path="res://scripts/change_level.gd" id="5_26hhc"]
 [ext_resource type="Resource" uid="uid://dvradrrw80d01" path="res://resources/map/root.tres" id="6_gn7nf"]
+[ext_resource type="PackedScene" uid="uid://cvnyvfiflreo5" path="res://scenes/objects/cash.tscn" id="7_ndk05"]
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_os21m")
@@ -34,3 +35,27 @@ input_keys = ExtResource("3_qt2qk")
 script = ExtResource("5_26hhc")
 level = NodePath("..")
 game_level = ExtResource("6_gn7nf")
+
+[node name="Cash" parent="." instance=ExtResource("7_ndk05")]
+position = Vector2(320, 424)
+scale = Vector2(1.5, 1.5)
+
+[node name="Cash2" parent="." instance=ExtResource("7_ndk05")]
+position = Vector2(384, 424)
+scale = Vector2(1.5, 1.5)
+
+[node name="Cash3" parent="." instance=ExtResource("7_ndk05")]
+position = Vector2(448, 424)
+scale = Vector2(1.5, 1.5)
+
+[node name="Cash4" parent="." instance=ExtResource("7_ndk05")]
+position = Vector2(512, 424)
+scale = Vector2(1.5, 1.5)
+
+[node name="Cash5" parent="." instance=ExtResource("7_ndk05")]
+position = Vector2(576, 424)
+scale = Vector2(1.5, 1.5)
+
+[node name="Cash6" parent="." instance=ExtResource("7_ndk05")]
+position = Vector2(640, 424)
+scale = Vector2(1.5, 1.5)
