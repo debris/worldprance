@@ -5,8 +5,10 @@
       "resource_name": true
     },
     "res://resources/map/": {
+      "attack": true,
       "resource_local_to_scene": true,
-      "resource_name": true
+      "resource_name": true,
+      "use": true
     }
   },
   "recent_paths": [

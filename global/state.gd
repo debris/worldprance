@@ -4,6 +4,7 @@ signal collected(collectible: String, value: int)
 
 var player_data_by_name: Dictionary
 var value_by_collectible: Dictionary
+var cached_values: Dictionary
 
 func get_player_data(player_name: String) -> PlayerData:
 	return player_data_by_name.get(player_name)
@@ -23,3 +24,8 @@ func get_collectible_count(collectible: String) -> int:
 		return 0
 	return value
 	
+func store_in_cache(key: String, value):
+	cached_values[key] = value
+
+func get_from_cache(key: String):
+	return cached_values.get(key)
