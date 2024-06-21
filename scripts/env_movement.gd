@@ -7,12 +7,12 @@ class_name EnvMovement
 @export var path: Path2D
 @export var loop_mode: Animation.LoopMode = Animation.LOOP_LINEAR
 
+var animation_player = AnimationPlayer.new()
+
 func _ready():
 	deferred_ready.call_deferred()
 
 func deferred_ready():
-	var animation_player = AnimationPlayer.new()
-
 	var path_follow = PathFollow2D.new()
 	path_follow.rotates = false
 

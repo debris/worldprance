@@ -6,3 +6,4 @@ class_name GameInput
 @export var right: String
 @export var down: String
 @export var attack: String
+@export var use: String

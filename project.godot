@@ -32,6 +32,7 @@ State="*res://global/state.gd"
 [display]
 
 window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
@@ -89,9 +90,19 @@ attack_2={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"echo":false,"script":null)
 ]
 }
+use={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="collectibles"
+2d_physics/layer_4="usable"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
