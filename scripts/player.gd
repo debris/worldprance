@@ -4,8 +4,8 @@ class_name Player
 @export var player_name: String
 @export var input_keys: GameInput
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 225.0
+const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

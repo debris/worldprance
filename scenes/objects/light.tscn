@@ -14,8 +14,7 @@ fill = 1
 fill_from = Vector2(0.5, 2.08165e-12)
 fill_to = Vector2(0.5, 0.5)
 
-[sub_resource type="Animation" id="Animation_74grv"]
-resource_name = "on"
+[sub_resource type="Animation" id="Animation_r0hvg"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -46,7 +45,8 @@ tracks/0/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_r0hvg"]
+[sub_resource type="Animation" id="Animation_74grv"]
+resource_name = "on"
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
