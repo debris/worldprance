@@ -12,6 +12,10 @@ func _process(_delta):
 
 	var direction = Input.get_axis(player.input_keys.left, player.input_keys.right)
 
+	if player.dead:
+		animation_state.travel("Death")
+		return
+
 	if not player.is_on_floor():
 		if player.double_jumped:
 			animation_state.travel("DoubleJump")

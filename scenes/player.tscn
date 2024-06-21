@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b6ufl0rqdaxid"]
+[gd_scene load_steps=42 format=3 uid="uid://b6ufl0rqdaxid"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_of2uh"]
 [ext_resource type="Resource" uid="uid://dca2473f858e5" path="res://resources/inputs/default.tres" id="2_afasx"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://mdr7yxd5bjtg" path="res://assets/characters/punk/punk_doublejump.png" id="5_k4h4s"]
 [ext_resource type="Texture2D" uid="uid://cpccvo1effiqs" path="res://assets/characters/punk/punk_attack2.png" id="7_46vsd"]
 [ext_resource type="Texture2D" uid="uid://56a07qiqlebu" path="res://assets/characters/punk/punk_punch.png" id="8_d5hpj"]
+[ext_resource type="Texture2D" uid="uid://bnl8mbpmtpu55" path="res://assets/characters/punk/punk_death.png" id="9_cd2lm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cyygm"]
 radius = 9.0
@@ -295,9 +296,50 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
+[sub_resource type="Animation" id="Animation_tjou0"]
+resource_name = "Death"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PunkIdle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_cd2lm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunkIdle:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PunkIdle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ieqyt"]
 _data = {
 "Attack2": SubResource("Animation_c373o"),
+"Death": SubResource("Animation_tjou0"),
 "DoubleJump": SubResource("Animation_lsxbs"),
 "Idle": SubResource("Animation_eqcic"),
 "Jump": SubResource("Animation_xmddw"),
@@ -308,6 +350,9 @@ _data = {
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6aecp"]
 animation = &"Attack2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8tns3"]
+animation = &"Death"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_swm1h"]
 animation = &"DoubleJump"
@@ -348,20 +393,24 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r8c4p"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oubqt"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_vcnqq"]
 states/Attack/node = SubResource("AnimationNodeAnimation_6aecp")
 states/Attack/position = Vector2(445.679, -202.442)
+states/Death/node = SubResource("AnimationNodeAnimation_8tns3")
+states/Death/position = Vector2(346.014, 97.4804)
 states/DoubleJump/node = SubResource("AnimationNodeAnimation_swm1h")
 states/DoubleJump/position = Vector2(557.197, 237.348)
 states/Idle/node = SubResource("AnimationNodeAnimation_4rlfu")
-states/Idle/position = Vector2(426.71, -16.7399)
+states/Idle/position = Vector2(411.21, -25.7399)
 states/Jump/node = SubResource("AnimationNodeAnimation_yg1sh")
 states/Jump/position = Vector2(555.265, 109.065)
 states/Run/node = SubResource("AnimationNodeAnimation_sx633")
 states/Run/position = Vector2(710.21, -16.8649)
 states/Start/position = Vector2(169, 50.5)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_6nx3l"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_6ah6e"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_f7w48"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_42oqr"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_uw76t"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_35upw"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_23obq"), "Jump", "DoubleJump", SubResource("AnimationNodeStateMachineTransition_g8xax"), "DoubleJump", "Jump", SubResource("AnimationNodeStateMachineTransition_4m76s"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_uttx8"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_gmie8"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_r8c4p")]
-graph_offset = Vector2(64.1539, -307.697)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_6nx3l"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_6ah6e"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_f7w48"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_42oqr"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_uw76t"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_35upw"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_23obq"), "Jump", "DoubleJump", SubResource("AnimationNodeStateMachineTransition_g8xax"), "DoubleJump", "Jump", SubResource("AnimationNodeStateMachineTransition_4m76s"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_uttx8"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_gmie8"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_r8c4p"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_oubqt")]
+graph_offset = Vector2(-142.486, -252.52)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2

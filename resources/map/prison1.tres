@@ -7,5 +7,5 @@ script = ExtResource("1_i041v")
 left = "prison0"
 up = ""
 right = ""
-down = ""
+down = "prison1-down1"
 size = Vector2(832, 324)
