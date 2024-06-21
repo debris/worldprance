@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dq6vkdcavn1fd"]
+[gd_scene load_steps=17 format=3 uid="uid://dq6vkdcavn1fd"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_os21m"]
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_vmom2"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b1awmjouokcj1" path="res://scenes/objects/platform.tscn" id="12_7b4j6"]
 [ext_resource type="Script" path="res://scripts/env_movement.gd" id="13_j6t00"]
 [ext_resource type="PackedScene" uid="uid://c7uw4g4so23t8" path="res://scenes/objects/button.tscn" id="14_4ctsi"]
+[ext_resource type="PackedScene" uid="uid://d3hs5w1ymderf" path="res://scenes/objects/door.tscn" id="15_kf5ok"]
 
 [sub_resource type="Curve2D" id="Curve2D_hrjpf"]
 _data = {
@@ -77,7 +78,7 @@ position = Vector2(-1411.2, 0)
 curve = SubResource("Curve2D_hrjpf")
 
 [node name="Platform2" parent="EnvMovement" instance=ExtResource("12_7b4j6")]
-position = Vector2(625.81, 96)
+position = Vector2(783.915, 96)
 
 [node name="Cash" type="Node" parent="."]
 
@@ -112,7 +113,13 @@ game_level = ExtResource("6_gn7nf")
 
 [node name="Overlay" parent="." instance=ExtResource("8_jkuor")]
 
+[node name="Door" parent="." instance=ExtResource("15_kf5ok")]
+position = Vector2(240, 416)
+metadata/_edit_group_ = true
+
 [connection signal="used" from="LightSwitch/Usable" to="Light/Switchable" method="toggle"]
+[connection signal="used" from="LightSwitch/Usable" to="Door/Switchable" method="toggle"]
 
 [editable path="LightSwitch"]
 [editable path="Light"]
+[editable path="Door"]
