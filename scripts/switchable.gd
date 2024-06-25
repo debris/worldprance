@@ -12,6 +12,7 @@ class_name Switchable
 
 func _ready():
 	play_animation()
+	animation_player.seek(10.0)
 
 func play_animation():
 	if on:
