@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bteafu7enxuur"]
+[gd_scene load_steps=11 format=3 uid="uid://bteafu7enxuur"]
 
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_yskrh"]
 [ext_resource type="PackedScene" uid="uid://b6ufl0rqdaxid" path="res://scenes/player.tscn" id="2_rjugf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://c2yjrr5iypg21" path="res://resources/map/prison0.tres" id="7_t2i6x"]
 [ext_resource type="PackedScene" uid="uid://crtnv46uf524x" path="res://scenes/objects/vault_door.tscn" id="9_0m66d"]
 [ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="9_k4md0"]
+[ext_resource type="Resource" uid="uid://blt14ye6r4b24" path="res://resources/inputs/player2.tres" id="10_edav2"]
 
 [node name="Prison0" type="Node2D"]
 
@@ -88,5 +89,11 @@ limit_left = 0
 limit_top = 0
 limit_right = 576
 limit_bottom = 324
+
+[node name="Player2" parent="." instance=ExtResource("2_rjugf")]
+modulate = Color(0.423529, 0.223529, 0.964706, 1)
+position = Vector2(272, 200)
+player_name = "player2"
+input_keys = ExtResource("10_edav2")
 
 [editable path="VaultDoor"]
