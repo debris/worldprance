@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bteafu7enxuur"]
+[gd_scene load_steps=10 format=3 uid="uid://bteafu7enxuur"]
 
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_yskrh"]
 [ext_resource type="PackedScene" uid="uid://b6ufl0rqdaxid" path="res://scenes/player.tscn" id="2_rjugf"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c7uw4g4so23t8" path="res://scenes/objects/button.tscn" id="5_65h6e"]
 [ext_resource type="Script" path="res://scripts/change_level.gd" id="6_4p5ft"]
 [ext_resource type="Resource" uid="uid://c2yjrr5iypg21" path="res://resources/map/prison0.tres" id="7_t2i6x"]
+[ext_resource type="PackedScene" uid="uid://ca7k4vf37dnjq" path="res://scenes/objects/box.tscn" id="8_a6k4e"]
+[ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="9_k4md0"]
 
 [node name="Prison0" type="Node2D"]
 
@@ -57,6 +59,7 @@ position = Vector2(528, 224)
 
 [node name="Player" parent="." instance=ExtResource("2_rjugf")]
 position = Vector2(128, 200)
+collision_mask = 17
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = 0
@@ -68,3 +71,16 @@ limit_bottom = 324
 script = ExtResource("6_4p5ft")
 level = NodePath("..")
 game_level = ExtResource("7_t2i6x")
+
+[node name="Box" parent="." instance=ExtResource("8_a6k4e")]
+position = Vector2(224, 208)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 184.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.0823529, 0.207843, 0.192157, 1)
+theme_override_fonts/font = ExtResource("9_k4md0")
+theme_override_font_sizes/font_size = 15
+text = "BLOCK A"

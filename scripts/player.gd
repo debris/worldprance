@@ -25,7 +25,6 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		fall_size += max(0, get_position_delta().y)
-		print_debug("fall_size: ", fall_size)
 	else:
 		double_jumped = false
 		if fall_size > 230.0:
@@ -50,6 +49,11 @@ func _physics_process(delta):
 
 	move_and_slide()
 	save_player_data()
+
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * 40.0)
 
 func load_player_data():
 	var data = State.get_player_data(player_name)
