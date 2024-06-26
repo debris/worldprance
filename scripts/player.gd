@@ -1,8 +1,10 @@
 extends CharacterBody2D
 class_name Player
 
-@export var player_name: String
+@export var player_name: String = "player1"
 @export var input_keys: GameInput
+
+@onready var name_label = $NameLabel
 
 const SPEED = 225.0
 const JUMP_VELOCITY = -300.0
@@ -16,6 +18,7 @@ var dead = false
 func _ready():
 	move_and_slide()
 	load_player_data()
+	name_label.text = player_name
 
 func _physics_process(delta):
 	if dead:

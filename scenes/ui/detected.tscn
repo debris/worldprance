@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi57j256ub52g"]
+
+[ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="1_1xxsn"]
+
+[node name="Detected" type="Label"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -528.0
+offset_bottom = -315.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.784314, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_1xxsn")
+theme_override_font_sizes/font_size = 8
+text = "DETECTED!"

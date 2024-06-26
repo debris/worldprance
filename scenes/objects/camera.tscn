@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfrt5dc2aagno"]
+
+[ext_resource type="Texture2D" uid="uid://c3nt07d61gwlb" path="res://assets/objects/camera.png" id="1_bs5gm"]
+[ext_resource type="Script" path="res://scenes/objects/camera.gd" id="1_wgckv"]
+[ext_resource type="Script" path="res://scripts/switchable.gd" id="3_lfda8"]
+
+[sub_resource type="Animation" id="Animation_24qc8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedDot:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3fav7"]
+resource_name = "off"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedDot:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xv1pa"]
+resource_name = "on"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedDot:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_laole"]
+_data = {
+"RESET": SubResource("Animation_24qc8"),
+"off": SubResource("Animation_3fav7"),
+"on": SubResource("Animation_xv1pa")
+}
+
+[node name="Camera" type="Node2D"]
+script = ExtResource("1_wgckv")
+
+[node name="Camera" type="Sprite2D" parent="."]
+position = Vector2(0, 5)
+texture = ExtResource("1_bs5gm")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-224, 96, -8, 8, -96, 96)
+
+[node name="Switchable" type="Node" parent="." node_paths=PackedStringArray("animation_player")]
+script = ExtResource("3_lfda8")
+on = true
+animation_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_laole")
+}
+
+[node name="RedDot" type="ColorRect" parent="."]
+offset_left = -2.0
+offset_top = 6.0
+offset_right = -1.0
+offset_bottom = 7.0
+color = Color(0.823529, 0.180392, 0.121569, 1)
