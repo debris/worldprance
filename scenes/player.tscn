@@ -545,7 +545,7 @@ player = NodePath("..")
 animation_tree = NodePath("../AnimationTree")
 
 [node name="NameLabel" type="Label" parent="."]
-z_index = 1
+z_index = 10
 offset_left = -64.0
 offset_top = -32.0
 offset_right = 64.0

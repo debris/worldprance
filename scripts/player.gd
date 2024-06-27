@@ -8,6 +8,7 @@ class_name Player
 
 const SPEED = 225.0
 const JUMP_VELOCITY = -300.0
+const LADDER_SPEED = 64.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -36,11 +37,11 @@ func _physics_process(delta):
 		velocity.x = 0
 		var v_direction = Input.get_axis(input_keys.up, input_keys.down)
 		if v_direction < 0:
-			velocity.y = -32.0
+			velocity.y = -LADDER_SPEED
 			global_position.x = ladder_position_x
 			print("up")
 		elif v_direction > 0:
-			velocity.y = 32.0
+			velocity.y = LADDER_SPEED
 			global_position.x = ladder_position_x
 			print("down")
 		else:
