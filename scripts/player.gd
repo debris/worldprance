@@ -14,6 +14,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var double_jumped = false
 var fall_size = 0.0
 var dead = false
+var is_on_ladder = 0
+var is_climbing = false
+var ladder_position_x = 0.0
 
 func _ready():
 	move_and_slide()
@@ -23,24 +26,58 @@ func _ready():
 func _physics_process(delta):
 	if dead:
 		return
+	elif is_on_ladder > 0:
+		double_jumped = false
+		if is_on_floor():
+			is_climbing = false
+		else:
+			is_climbing = true
+
+		velocity.x = 0
+		var v_direction = Input.get_axis(input_keys.up, input_keys.down)
+		if v_direction < 0:
+			velocity.y = -32.0
+			global_position.x = ladder_position_x
+			print("up")
+		elif v_direction > 0:
+			velocity.y = 32.0
+			global_position.x = ladder_position_x
+			print("down")
+		else:
+			velocity.y = 0.0
+
+		if Input.is_action_just_pressed(input_keys.jump):
+			velocity.y = JUMP_VELOCITY
+
+	elif is_on_floor():
+		double_jumped = false
+		if Input.is_action_just_pressed(input_keys.jump):
+			velocity.y = JUMP_VELOCITY
+	else:
+		velocity.y += gravity * delta
+		if !double_jumped:
+			if Input.is_action_just_pressed(input_keys.jump):
+				velocity.y += JUMP_VELOCITY
+				double_jumped = true
+		
 
 	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-		fall_size += max(0, get_position_delta().y)
-	else:
-		double_jumped = false
-		if fall_size > 230.0:
-			dead = true
-		fall_size = 0.0
+	#if not is_on_floor():
+	#	velocity.y += gravity * delta
+	#	fall_size += max(0, get_position_delta().y)
+	#else:
+	#	double_jumped = false
+	#	if fall_size > 230.0:
+	#		dead = true
+	#	fall_size = 0.0
 
 	# Handle jump.
-	if Input.is_action_just_pressed(input_keys.up):
-		if is_on_floor():
-			velocity.y = JUMP_VELOCITY
-		elif !double_jumped:
-			velocity.y += JUMP_VELOCITY
-			double_jumped = true
+	#if Input.is_action_just_pressed(input_keys.up):
+	#	if is_on_floor():
+	#		velocity.y = JUMP_VELOCITY
+	#	elif !double_jumped:
+	#		velocity.y += JUMP_VELOCITY
+	#		double_jumped = true
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -71,3 +108,16 @@ func save_player_data():
 	player_data.velocity = velocity
 	player_data.double_jumped = double_jumped
 	State.update_player_data(player_name, player_data)
+
+
+
+func _on_ladder_entered(area: Area2D):
+	is_on_ladder += 1
+	ladder_position_x = area.global_position.x
+	print("entered")
+
+func _on_ladder_exited(_area: Area2D):
+	is_on_ladder -= 1
+	if is_on_ladder == 0:
+		is_climbing = false
+	print("exited")

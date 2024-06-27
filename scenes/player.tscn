@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://b6ufl0rqdaxid"]
+[gd_scene load_steps=52 format=3 uid="uid://b6ufl0rqdaxid"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_of2uh"]
 [ext_resource type="Resource" uid="uid://dca2473f858e5" path="res://resources/inputs/default.tres" id="2_afasx"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cpccvo1effiqs" path="res://assets/characters/punk/punk_attack2.png" id="7_46vsd"]
 [ext_resource type="Texture2D" uid="uid://56a07qiqlebu" path="res://assets/characters/punk/punk_punch.png" id="8_d5hpj"]
 [ext_resource type="Texture2D" uid="uid://bnl8mbpmtpu55" path="res://assets/characters/punk/punk_death.png" id="9_cd2lm"]
+[ext_resource type="Texture2D" uid="uid://dep2hhurtqwby" path="res://assets/characters/punk/punk_climb.png" id="11_hcsj1"]
 [ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="12_31ql4"]
 [ext_resource type="AudioStream" uid="uid://i5nphoo27lxr" path="res://assets/sounds/jump.mp3" id="13_sgfd0"]
 
@@ -57,6 +58,47 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_6vcog"]
+resource_name = "Climb"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PunkIdle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PunkIdle:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PunkIdle:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_hcsj1")]
 }
 
 [sub_resource type="Animation" id="Animation_tjou0"]
@@ -371,6 +413,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ieqyt"]
 _data = {
 "Attack2": SubResource("Animation_c373o"),
+"Climb": SubResource("Animation_6vcog"),
 "Death": SubResource("Animation_tjou0"),
 "DoubleJump": SubResource("Animation_lsxbs"),
 "Idle": SubResource("Animation_eqcic"),
@@ -382,6 +425,19 @@ _data = {
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6aecp"]
 animation = &"Attack2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ltwsb"]
+animation = &"Climb"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_l1pje"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ooewb"]
+graph_offset = Vector2(-100.969, -118.205)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_ltwsb")
+nodes/Animation/position = Vector2(-50, 150)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_l1pje")
+nodes/TimeScale/position = Vector2(120, 150)
+node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8tns3"]
 animation = &"Death"
@@ -427,11 +483,17 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oubqt"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qx2nw"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xqrdj"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_vcnqq"]
 states/Attack/node = SubResource("AnimationNodeAnimation_6aecp")
 states/Attack/position = Vector2(445.679, -202.442)
+states/Climb/node = SubResource("AnimationNodeBlendTree_ooewb")
+states/Climb/position = Vector2(309.799, 235.925)
 states/Death/node = SubResource("AnimationNodeAnimation_8tns3")
-states/Death/position = Vector2(346.014, 97.4804)
+states/Death/position = Vector2(175.514, 81.4804)
 states/DoubleJump/node = SubResource("AnimationNodeAnimation_swm1h")
 states/DoubleJump/position = Vector2(557.197, 237.348)
 states/Idle/node = SubResource("AnimationNodeAnimation_4rlfu")
@@ -440,9 +502,12 @@ states/Jump/node = SubResource("AnimationNodeAnimation_yg1sh")
 states/Jump/position = Vector2(555.265, 109.065)
 states/Run/node = SubResource("AnimationNodeAnimation_sx633")
 states/Run/position = Vector2(710.21, -16.8649)
-states/Start/position = Vector2(169, 50.5)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_6nx3l"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_6ah6e"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_f7w48"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_42oqr"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_uw76t"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_35upw"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_23obq"), "Jump", "DoubleJump", SubResource("AnimationNodeStateMachineTransition_g8xax"), "DoubleJump", "Jump", SubResource("AnimationNodeStateMachineTransition_4m76s"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_uttx8"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_gmie8"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_r8c4p"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_oubqt")]
-graph_offset = Vector2(-142.486, -252.52)
+states/Start/position = Vector2(157.5, -61)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_6nx3l"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_6ah6e"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_f7w48"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_42oqr"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_uw76t"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_35upw"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_23obq"), "Jump", "DoubleJump", SubResource("AnimationNodeStateMachineTransition_g8xax"), "DoubleJump", "Jump", SubResource("AnimationNodeStateMachineTransition_4m76s"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_uttx8"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_gmie8"), "Attack", "Run", SubResource("AnimationNodeStateMachineTransition_r8c4p"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_oubqt"), "Idle", "Climb", SubResource("AnimationNodeStateMachineTransition_qx2nw"), "Climb", "Idle", SubResource("AnimationNodeStateMachineTransition_xqrdj")]
+graph_offset = Vector2(27.2993, -277.998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vigft"]
+size = Vector2(8, 8)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -467,6 +532,7 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_vcnqq")
 anim_player = NodePath("../AnimationPlayer")
+parameters/Climb/TimeScale/scale = 1.0
 
 [node name="LookAt" type="Node" parent="." node_paths=PackedStringArray("player", "sprite")]
 script = ExtResource("3_i3ojf")
@@ -479,6 +545,7 @@ player = NodePath("..")
 animation_tree = NodePath("../AnimationTree")
 
 [node name="NameLabel" type="Label" parent="."]
+z_index = 1
 offset_left = -64.0
 offset_top = -32.0
 offset_right = 64.0
@@ -489,3 +556,14 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_vigft")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_ladder_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_ladder_exited"]

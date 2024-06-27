@@ -10,10 +10,19 @@ func _process(_delta):
 		animation_state.travel("Attack")
 		return
 
-	var direction = Input.get_axis(player.input_keys.left, player.input_keys.right)
+	var h_direction = Input.get_axis(player.input_keys.left, player.input_keys.right)
+	var v_direction = Input.get_axis(player.input_keys.up, player.input_keys.down)
 
 	if player.dead:
 		animation_state.travel("Death")
+		return
+
+	if player.is_climbing:
+		if v_direction == 0:
+			animation_tree.set("parameters/Climb/TimeScale/scale", 0)
+		else:
+			animation_tree.set("parameters/Climb/TimeScale/scale", 1)
+		animation_state.travel("Climb")
 		return
 
 	if not player.is_on_floor():
@@ -23,7 +32,7 @@ func _process(_delta):
 			animation_state.travel("Jump")
 		return
 
-	if direction == 0:
+	if h_direction == 0:
 		animation_state.travel("Idle")
 	else:
 		animation_state.travel("Run")

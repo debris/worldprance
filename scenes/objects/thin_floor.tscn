@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://7smjtqjl6ctj"]
+
+[ext_resource type="Script" path="res://scenes/objects/thin_floor.gd" id="1_oqxha"]
+[ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="2_qyk5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xh18"]
+size = Vector2(32, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw10s"]
+size = Vector2(16, 8)
+
+[node name="Floor" type="Node2D"]
+script = ExtResource("1_oqxha")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-16, -8)
+tile_set = ExtResource("2_qyk5r")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 196608, 5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_2xh18")
+one_way_collision = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -16)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_dw10s")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_player_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_player_exited"]
