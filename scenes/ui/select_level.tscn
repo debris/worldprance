@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://g8f6prk64quf"]
+[gd_scene load_steps=7 format=3 uid="uid://g8f6prk64quf"]
 
 [ext_resource type="Script" path="res://scenes/ui/select_level.gd" id="1_s1yok"]
 [ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="1_su8md"]
 [ext_resource type="PackedScene" uid="uid://bedncojmylgkl" path="res://scenes/ui/select_level_right_panel.tscn" id="3_krga3"]
+[ext_resource type="Resource" uid="uid://bdy5rbe3tofc8" path="res://resources/levels/block_a.tres" id="4_dtneg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk5rh"]
 
@@ -56,3 +57,4 @@ columns = 3
 
 [node name="RightPanel" parent="GridContainer/GridContainer" instance=ExtResource("3_krga3")]
 layout_mode = 2
+level_data = ExtResource("4_dtneg")

@@ -23,3 +23,8 @@ func _update_data():
 	task0.text = level_data.task0
 	task1.text = level_data.task1
 	task2.text = level_data.task2
+
+
+func _on_start_button_pressed():
+	print("goto: " + level_data.scene_name)
+	Scenes.goto_level(level_data.scene_name)
