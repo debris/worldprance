@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://g8f6prk64quf"]
+
+[ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="1_su8md"]
+[ext_resource type="TileSet" uid="uid://b85edn0lxsvdt" path="res://resources/frames.tres" id="2_q7tt5"]
+[ext_resource type="PackedScene" uid="uid://cv5sfua4e41yl" path="res://scenes/ui/select_level_cell.tscn" id="2_swapw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk5rh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p63y0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sedut"]
+
+[node name="SelectLevel" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_su8md")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 262144, 6, 65536, 262144, 6, 131072, 262144, 6, 196608, 262144, 6, 262144, 262144, 6, 327680, 262144, 6, 393216, 262144, 6, 458752, 262144, 6, 524288, 262144, 6, 589824, 262144, 6, 655360, 262144, 6, 655361, 262144, 6, 655362, 262144, 6, 589827, 262144, 6, 589828, 262144, 6, 589829, 262144, 6, 655363, 262144, 6, 655364, 262144, 6, 655365, 262144, 6, 655366, 262144, 6, 655367, 262144, 6, 655368, 262144, 6, 655369, 262144, 6, 655370, 262144, 6, 655371, 262144, 6, 655372, 262144, 6, 655373, 262144, 6, 655374, 262144, 6, 655375, 262144, 6, 655376, 262144, 6, 655377, 262144, 6, 589841, 262144, 6, 524305, 262144, 6, 458769, 262144, 6, 393233, 262144, 6, 327697, 262144, 6, 262161, 262144, 6, 196625, 262144, 6, 131089, 262144, 6, 65553, 262144, 6, 17, 262144, 6, 16, 262144, 6, 15, 262144, 6, 14, 262144, 6, 13, 262144, 6, 12, 262144, 6, 11, 262144, 6, 10, 262144, 6, 9, 262144, 6, 8, 262144, 6, 7, 262144, 6, 6, 262144, 6, 5, 262144, 6, 4, 262144, 6, 3, 262144, 6, 2, 262144, 6, 1, 262144, 6, 262150, 262144, 6, 196614, 262144, 6, 131078, 262144, 6, 65542, 262144, 6, 65541, 262144, 6, 65540, 262144, 6, 65539, 262144, 6, 65538, 262144, 6, 65537, 262144, 6, 131073, 262144, 6, 196609, 262144, 6, 262145, 262144, 6, 327681, 262144, 6, 393217, 262144, 6, 458753, 262144, 6, 524289, 262144, 6, 589825, 262144, 6, 589826, 262144, 6, 524290, 262144, 6, 458754, 262144, 6, 393218, 262144, 6, 327682, 262144, 6, 262146, 262144, 6, 196610, 262144, 6, 131074, 262144, 6, 131075, 262144, 6, 196611, 262144, 6, 262147, 262144, 6, 327683, 262144, 6, 393219, 262144, 6, 458755, 262144, 6, 524291, 262144, 6, 524292, 262144, 6, 458756, 262144, 6, 393220, 262144, 6, 327684, 262144, 6, 262148, 262144, 6, 196612, 262144, 6, 131076, 262144, 6, 131077, 262144, 6, 196613, 262144, 6, 262149, 262144, 6, 327685, 262144, 6, 393221, 262144, 6, 458757, 262144, 6, 524293, 262144, 6, 524294, 262144, 6, 458758, 262144, 6, 393222, 262144, 6, 327686, 262144, 6, 327687, 262144, 6, 262151, 262144, 6, 196615, 262144, 6, 131079, 262144, 6, 65543, 262144, 6, 65544, 262144, 6, 131080, 262144, 6, 196616, 262144, 6, 262152, 262144, 6, 327688, 262144, 6, 393224, 262144, 6, 393223, 262144, 6, 458759, 262144, 6, 524295, 262144, 6, 589831, 262144, 6, 589830, 262144, 6, 589832, 262144, 6, 524296, 262144, 6, 458760, 262144, 6, 458761, 262144, 6, 393225, 262144, 6, 327689, 262144, 6, 262153, 262144, 6, 196617, 262144, 6, 131081, 262144, 6, 65545, 262144, 6, 65546, 262144, 6, 131082, 262144, 6, 196618, 262144, 6, 262154, 262144, 6, 327690, 262144, 6, 393226, 262144, 6, 458762, 262144, 6, 524298, 262144, 6, 524297, 262144, 6, 589833, 262144, 6, 589834, 262144, 6, 589835, 262144, 6, 524299, 262144, 6, 458763, 262144, 6, 393227, 262144, 6, 327691, 262144, 6, 262155, 262144, 6, 196619, 262144, 6, 131083, 262144, 6, 65547, 262144, 6, 65548, 262144, 6, 131084, 262144, 6, 196620, 262144, 6, 262156, 262144, 6, 327692, 262144, 6, 393228, 262144, 6, 458764, 262144, 6, 524300, 262144, 6, 589836, 262144, 6, 589837, 262144, 6, 524301, 262144, 6, 458765, 262144, 6, 393229, 262144, 6, 327693, 262144, 6, 262157, 262144, 6, 196621, 262144, 6, 131085, 262144, 6, 65549, 262144, 6, 65550, 262144, 6, 131086, 262144, 6, 196622, 262144, 6, 262158, 262144, 6, 327694, 262144, 6, 393230, 262144, 6, 458766, 262144, 6, 524302, 262144, 6, 589838, 262144, 6, 589839, 262144, 6, 524303, 262144, 6, 458767, 262144, 6, 393231, 262144, 6, 327695, 262144, 6, 262159, 262144, 6, 196623, 262144, 6, 131087, 262144, 6, 65551, 262144, 6, 65552, 262144, 6, 131088, 262144, 6, 196624, 262144, 6, 262160, 262144, 6, 327696, 262144, 6, 393232, 262144, 6, 458768, 262144, 6, 524304, 262144, 6, 589840, 262144, 6)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_right = 576.0
+offset_bottom = 324.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="Panel" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 16)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mk5rh")
+
+[node name="GridContainer" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="Panel" type="Panel" parent="GridContainer/GridContainer"]
+custom_minimum_size = Vector2(72, 2.08165e-12)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p63y0")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="GridContainer/GridContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(336, 2.08165e-12)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="LevelsGrid" type="GridContainer" parent="GridContainer/GridContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 3
+
+[node name="SelectLevelCell" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
+layout_mode = 2
+
+[node name="SelectLevelCell2" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
+layout_mode = 2
+
+[node name="SelectLevelCell3" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
+layout_mode = 2
+
+[node name="SelectLevelCell4" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
+layout_mode = 2
+
+[node name="SelectLevelCell5" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
+layout_mode = 2
+
+[node name="SelectLevelCell6" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
+layout_mode = 2
+
+[node name="SelectLevelCell7" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
+layout_mode = 2
+
+[node name="SelectLevelCell8" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
+layout_mode = 2
+
+[node name="SelectLevelCell9" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
+layout_mode = 2
+
+[node name="RightPanel" type="Panel" parent="GridContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 292)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sedut")
+
+[node name="TileMap" type="TileMap" parent="GridContainer/GridContainer/RightPanel"]
+tile_set = ExtResource("2_q7tt5")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 524289, 0, 65536, 524289, 1, 131072, 524289, 1, 196608, 524289, 1, 262144, 524289, 1, 327680, 524289, 1, 393216, 524289, 1, 458752, 524289, 1, 524288, 524289, 2, 524289, 524289, 5, 524290, 524289, 5, 524291, 524289, 5, 1, 524289, 3, 2, 524289, 3, 3, 524289, 3, 458753, 524289, 4, 393217, 524289, 4, 327681, 524289, 4, 262145, 524289, 4, 196609, 524289, 4, 131073, 524289, 4, 65537, 524289, 4, 458754, 524289, 4, 393218, 524289, 4, 327682, 524289, 4, 262146, 524289, 4, 196610, 524289, 4, 131074, 524289, 4, 65538, 524289, 4, 458755, 524289, 4, 393219, 524289, 4, 327683, 524289, 4, 262147, 524289, 4, 196611, 524289, 4, 131075, 524289, 4, 65539, 524289, 4)

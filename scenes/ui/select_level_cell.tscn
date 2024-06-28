@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv5sfua4e41yl"]
+
+[ext_resource type="TileSet" uid="uid://b85edn0lxsvdt" path="res://resources/frames.tres" id="1_so7vb"]
+[ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="2_nfkkr"]
+
+[node name="SelectLevelCell" type="Control"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_so7vb")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 5, 65536, 1, 6, 131072, 1, 7, 1, 65537, 5, 65537, 65537, 6, 131073, 65537, 7, 2, 131073, 5, 65538, 131073, 6, 131074, 131073, 7)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_nfkkr")
+theme_override_font_sizes/font_size = 12
+text = "LEVEL 0"
+horizontal_alignment = 1
