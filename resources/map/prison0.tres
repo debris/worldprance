@@ -8,4 +8,5 @@ left = ""
 up = ""
 right = "prison1"
 down = ""
+dimension = "prison0-d"
 size = Vector2(576, 324)

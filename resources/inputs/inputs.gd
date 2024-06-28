@@ -8,3 +8,4 @@ class_name GameInput
 @export var attack: String
 @export var use: String
 @export var jump: String
+@export var dimension: String

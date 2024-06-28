@@ -19,6 +19,10 @@ func _process(_delta):
 		if player == null:
 			continue
 	
+		if !game_level.dimension.is_empty() && game_level.dimension != null && Input.is_action_just_pressed(player.input_keys.dimension):
+			change_level(player.player_name, game_level.dimension, Vector2.ZERO)
+			return
+
 		if player.position.x > game_level.size.x:
 			change_level(player.player_name, game_level.right, Vector2(-game_level.size.x, 0))
 			return
