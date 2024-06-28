@@ -1,16 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://g8f6prk64quf"]
+[gd_scene load_steps=6 format=3 uid="uid://g8f6prk64quf"]
 
+[ext_resource type="Script" path="res://scenes/ui/select_level.gd" id="1_s1yok"]
 [ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="1_su8md"]
-[ext_resource type="TileSet" uid="uid://b85edn0lxsvdt" path="res://resources/frames.tres" id="2_q7tt5"]
-[ext_resource type="PackedScene" uid="uid://cv5sfua4e41yl" path="res://scenes/ui/select_level_cell.tscn" id="2_swapw"]
+[ext_resource type="PackedScene" uid="uid://bedncojmylgkl" path="res://scenes/ui/select_level_right_panel.tscn" id="3_krga3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk5rh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p63y0"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sedut"]
-
 [node name="SelectLevel" type="Node2D"]
+script = ExtResource("1_s1yok")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_su8md")
@@ -43,6 +42,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_p63y0")
 clip_contents = false
 custom_minimum_size = Vector2(336, 2.08165e-12)
 layout_mode = 2
+follow_focus = true
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
@@ -54,39 +54,5 @@ theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
 columns = 3
 
-[node name="SelectLevelCell" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
+[node name="RightPanel" parent="GridContainer/GridContainer" instance=ExtResource("3_krga3")]
 layout_mode = 2
-
-[node name="SelectLevelCell2" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
-layout_mode = 2
-
-[node name="SelectLevelCell3" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
-layout_mode = 2
-
-[node name="SelectLevelCell4" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
-layout_mode = 2
-
-[node name="SelectLevelCell5" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
-layout_mode = 2
-
-[node name="SelectLevelCell6" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
-layout_mode = 2
-
-[node name="SelectLevelCell7" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
-layout_mode = 2
-
-[node name="SelectLevelCell8" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
-layout_mode = 2
-
-[node name="SelectLevelCell9" parent="GridContainer/GridContainer/ScrollContainer/LevelsGrid" instance=ExtResource("2_swapw")]
-layout_mode = 2
-
-[node name="RightPanel" type="Panel" parent="GridContainer/GridContainer"]
-custom_minimum_size = Vector2(120, 292)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_sedut")
-
-[node name="TileMap" type="TileMap" parent="GridContainer/GridContainer/RightPanel"]
-tile_set = ExtResource("2_q7tt5")
-format = 2
-layer_0/tile_data = PackedInt32Array(0, 524289, 0, 65536, 524289, 1, 131072, 524289, 1, 196608, 524289, 1, 262144, 524289, 1, 327680, 524289, 1, 393216, 524289, 1, 458752, 524289, 1, 524288, 524289, 2, 524289, 524289, 5, 524290, 524289, 5, 524291, 524289, 5, 1, 524289, 3, 2, 524289, 3, 3, 524289, 3, 458753, 524289, 4, 393217, 524289, 4, 327681, 524289, 4, 262145, 524289, 4, 196609, 524289, 4, 131073, 524289, 4, 65537, 524289, 4, 458754, 524289, 4, 393218, 524289, 4, 327682, 524289, 4, 262146, 524289, 4, 196610, 524289, 4, 131074, 524289, 4, 65538, 524289, 4, 458755, 524289, 4, 393219, 524289, 4, 327683, 524289, 4, 262147, 524289, 4, 196611, 524289, 4, 131075, 524289, 4, 65539, 524289, 4)

@@ -4,6 +4,10 @@
       "resource_local_to_scene": true,
       "resource_name": true
     },
+    "res://resources/levels/": {
+      "resource_local_to_scene": true,
+      "resource_name": true
+    },
     "res://resources/map/": {
       "attack": true,
       "resource_local_to_scene": true,
@@ -13,7 +17,8 @@
   },
   "recent_paths": [
     "res://resources/inputs/",
-    "res://resources/map/"
+    "res://resources/map/",
+    "res://resources/levels/"
   ],
   "table_functions": {
     "filter": [

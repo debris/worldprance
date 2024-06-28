@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://cq1o1ww0v58ek"]
+
+[ext_resource type="Script" path="res://resources/level.gd" id="1_f7rm5"]
+
+[resource]
+script = ExtResource("1_f7rm5")
+order_id = 3
+level_name = "BLOCK B"
+scene_name = "prison_0"
+task0 = "Complete"
+task1 = "Collect all cash and comeplete level in under 30 seconds"
+task2 = "Complete under 10 seconds"
