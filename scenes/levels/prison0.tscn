@@ -121,58 +121,6 @@ horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="Labels"]
-offset_left = 416.0
-offset_top = 296.0
-offset_right = 448.0
-offset_bottom = 305.0
-theme_override_colors/font_color = Color(0.815686, 0.592157, 0.443137, 1)
-theme_override_fonts/font = ExtResource("9_k4md0")
-theme_override_font_sizes/font_size = 8
-text = "A01"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label6" type="Label" parent="Labels"]
-offset_left = 48.0
-offset_top = 296.0
-offset_right = 80.0
-offset_bottom = 305.0
-theme_override_colors/font_color = Color(0.815686, 0.592157, 0.443137, 1)
-theme_override_fonts/font = ExtResource("9_k4md0")
-theme_override_font_sizes/font_size = 8
-text = "A00S"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label4" type="Label" parent="Labels"]
-offset_left = 480.0
-offset_top = 296.0
-offset_right = 512.0
-offset_bottom = 305.0
-theme_override_colors/font_color = Color(0.815686, 0.592157, 0.443137, 1)
-theme_override_fonts/font = ExtResource("9_k4md0")
-theme_override_font_sizes/font_size = 8
-text = "A02"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Label5" type="Label" parent="Labels"]
-offset_left = 544.0
-offset_top = 296.0
-offset_right = 576.0
-offset_bottom = 305.0
-theme_override_colors/font_color = Color(0.815686, 0.592157, 0.443137, 1)
-theme_override_fonts/font = ExtResource("9_k4md0")
-theme_override_font_sizes/font_size = 8
-text = "A03"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="Player" parent="." instance=ExtResource("2_rjugf")]
 position = Vector2(128, 232)
 collision_mask = 17
@@ -217,6 +165,60 @@ position = Vector2(352, 360)
 
 [node name="Cash4" parent="ObjectsFront/Cash" instance=ExtResource("16_r1li2")]
 position = Vector2(320, 360)
+
+[node name="FloorLabels" type="Node2D" parent="."]
+
+[node name="Label3" type="Label" parent="FloorLabels"]
+offset_left = 416.0
+offset_top = 296.0
+offset_right = 448.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.815686, 0.592157, 0.443137, 1)
+theme_override_fonts/font = ExtResource("9_k4md0")
+theme_override_font_sizes/font_size = 8
+text = "A01"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="FloorLabels"]
+offset_left = 48.0
+offset_top = 296.0
+offset_right = 80.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.815686, 0.592157, 0.443137, 1)
+theme_override_fonts/font = ExtResource("9_k4md0")
+theme_override_font_sizes/font_size = 8
+text = "A00S"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="FloorLabels"]
+offset_left = 480.0
+offset_top = 296.0
+offset_right = 512.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.815686, 0.592157, 0.443137, 1)
+theme_override_fonts/font = ExtResource("9_k4md0")
+theme_override_font_sizes/font_size = 8
+text = "A02"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="FloorLabels"]
+offset_left = 544.0
+offset_top = 296.0
+offset_right = 576.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0.815686, 0.592157, 0.443137, 1)
+theme_override_fonts/font = ExtResource("9_k4md0")
+theme_override_font_sizes/font_size = 8
+text = "A03"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ChangeLevel" type="Node" parent="." node_paths=PackedStringArray("level")]
 script = ExtResource("6_4p5ft")
