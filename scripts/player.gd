@@ -39,11 +39,9 @@ func _physics_process(delta):
 		if v_direction < 0:
 			velocity.y = -LADDER_SPEED
 			global_position.x = ladder_position_x
-			print("up")
 		elif v_direction > 0:
 			velocity.y = LADDER_SPEED
 			global_position.x = ladder_position_x
-			print("down")
 		else:
 			velocity.y = 0.0
 
@@ -61,25 +59,6 @@ func _physics_process(delta):
 				velocity.y += JUMP_VELOCITY
 				double_jumped = true
 		
-
-	# Add the gravity.
-	#if not is_on_floor():
-	#	velocity.y += gravity * delta
-	#	fall_size += max(0, get_position_delta().y)
-	#else:
-	#	double_jumped = false
-	#	if fall_size > 230.0:
-	#		dead = true
-	#	fall_size = 0.0
-
-	# Handle jump.
-	#if Input.is_action_just_pressed(input_keys.up):
-	#	if is_on_floor():
-	#		velocity.y = JUMP_VELOCITY
-	#	elif !double_jumped:
-	#		velocity.y += JUMP_VELOCITY
-	#		double_jumped = true
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis(input_keys.left, input_keys.right)
@@ -115,10 +94,8 @@ func save_player_data():
 func _on_ladder_entered(area: Area2D):
 	is_on_ladder += 1
 	ladder_position_x = area.global_position.x
-	print("entered")
 
 func _on_ladder_exited(_area: Area2D):
 	is_on_ladder -= 1
 	if is_on_ladder == 0:
 		is_climbing = false
-	print("exited")

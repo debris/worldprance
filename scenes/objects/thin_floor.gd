@@ -13,10 +13,8 @@ func _process(_delta):
 			collision_shape.disabled = false
 
 func _on_player_entered(body: Player):
-	print("player entered")
 	players[body] = null
 
 func _on_player_exited(body: Player):
-	print("player exited")
 	players[body] = null
 	players.erase(body)
