@@ -14,16 +14,21 @@ var loaded_b: Node2D
 func _ready():
 	start()
 
+	State.finished.connect(func(level_record):
+		Records.save_level_record(level_data.level_name, level_record)
+		Scenes.goto_level_select()
+	)
+
 func start():
 	if level_data == null:
 		return
 
 	if loaded_a != null:
-		queue_free()
+		loaded_a.queue_free()
 		loaded_a = null
 
 	if loaded_b != null:
-		queue_free()
+		loaded_b.queue_free()
 		loaded_b = null
 
 	loaded_a = load("res://scenes/levels/" + level_data.scene_name +".tscn").instantiate()

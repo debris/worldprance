@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/ui/select_level_right_panel.gd" id="1_h3v45"]
 [ext_resource type="TileSet" uid="uid://b85edn0lxsvdt" path="res://resources/frames.tres" id="1_v70c0"]
 [ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="2_vjyhn"]
-[ext_resource type="Texture2D" uid="uid://xdjoheyr8wff" path="res://assets/empty_star.png" id="4_fxh63"]
+[ext_resource type="PackedScene" uid="uid://cwgi7m472xbr3" path="res://scenes/ui/star.tscn" id="4_etjiy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sedut"]
 
@@ -40,23 +40,8 @@ offset_bottom = 256.0
 custom_minimum_size = Vector2(2.08165e-12, 16)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="GridContainer/Control"]
-custom_minimum_size = Vector2(2.08165e-12, 16)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_fxh63")
-expand_mode = 2
-stretch_mode = 4
+[node name="Star" parent="GridContainer/Control" instance=ExtResource("4_etjiy")]
+position = Vector2(48, 8)
 
 [node name="Task0" type="Label" parent="GridContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 16)
@@ -73,23 +58,8 @@ autowrap_mode = 2
 custom_minimum_size = Vector2(2.08165e-12, 16)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="GridContainer/Control2"]
-custom_minimum_size = Vector2(2.08165e-12, 16)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_fxh63")
-expand_mode = 2
-stretch_mode = 4
+[node name="Star" parent="GridContainer/Control2" instance=ExtResource("4_etjiy")]
+position = Vector2(48, 8)
 
 [node name="Task1" type="Label" parent="GridContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 16)
@@ -106,23 +76,8 @@ autowrap_mode = 2
 custom_minimum_size = Vector2(2.08165e-12, 16)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="GridContainer/Control3"]
-custom_minimum_size = Vector2(2.08165e-12, 16)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_fxh63")
-expand_mode = 2
-stretch_mode = 4
+[node name="Star" parent="GridContainer/Control3" instance=ExtResource("4_etjiy")]
+position = Vector2(48, 8)
 
 [node name="Task2" type="Label" parent="GridContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 16)
