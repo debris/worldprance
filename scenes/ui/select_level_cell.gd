@@ -31,8 +31,8 @@ func _on_button_pressed():
 		Sounds.play_press()
 	Scenes.goto_level(level_data)
 
-func _on_button_mouse_entered():
-	button.grab_focus()
+#func _on_button_mouse_entered():
+#	button.grab_focus()
 
 func _on_button_mouse_exited():
 	pass
