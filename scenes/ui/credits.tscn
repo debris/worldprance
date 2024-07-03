@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=3 uid="uid://cw1rxtnres7sn"]
+
+[ext_resource type="Script" path="res://scenes/ui/credits.gd" id="1_3i88r"]
+[ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="1_reuyn"]
+[ext_resource type="TileSet" uid="uid://b85edn0lxsvdt" path="res://resources/frames.tres" id="2_e7ktj"]
+[ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="3_i8f6f"]
+[ext_resource type="Script" path="res://scenes/ui/start_menu_button.gd" id="4_ytqxj"]
+[ext_resource type="PackedScene" uid="uid://bl5y3rxxuiwa" path="res://scenes/objects/light.tscn" id="6_ex1bb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uyhn7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t30ip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gecy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urwd5"]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_3i88r")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_reuyn")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 262144, 6, 65536, 0, 6, 131072, 196608, 6, 196608, 327680, 6, 262144, 327680, 6, 327680, 393216, 6, 393216, 327680, 6, 458752, 262144, 6, 524288, 393216, 6, 589824, 262144, 6, 655360, 196608, 6, 655361, 262144, 6, 655362, 262144, 6, 589827, 262144, 6, 589828, 262144, 6, 589829, 262144, 6, 655363, 131072, 6, 655364, 262144, 6, 655365, 196608, 6, 655366, 262144, 6, 655367, 262144, 6, 655368, 262144, 6, 655369, 262144, 6, 655370, 262144, 6, 655371, 262144, 6, 655372, 393216, 6, 655373, 393216, 6, 655374, 262144, 6, 655375, 262144, 6, 655376, 262144, 6, 655377, 262144, 6, 589841, 262144, 6, 524305, 262144, 6, 458769, 262144, 6, 393233, 262144, 6, 327697, 262144, 6, 262161, 262144, 6, 196625, 262144, 6, 131089, 262144, 6, 65553, 262144, 6, 17, 262144, 6, 16, 196608, 6, 15, 262144, 6, 14, 262144, 6, 13, 262144, 6, 12, 262144, 6, 11, 262144, 6, 10, 262144, 6, 9, 262144, 6, 8, 262144, 6, 7, 262144, 6, 6, 262144, 6, 5, 327680, 6, 4, 327680, 6, 3, 262144, 6, 2, 196608, 6, 1, 262144, 6, 262150, 262144, 6, 196614, 262144, 6, 131078, 262144, 6, 65542, 262144, 6, 65541, 262144, 6, 65540, 262144, 6, 65539, 262144, 6, 65538, 262144, 6, 65537, 65536, 6, 131073, 327680, 6, 196609, 262144, 6, 262145, 262144, 6, 327681, 393216, 6, 393217, 262144, 6, 458753, 196608, 6, 524289, 262144, 6, 589825, 393216, 6, 589826, 196608, 6, 524290, 262144, 6, 458754, 131072, 6, 393218, 262144, 6, 327682, 196608, 6, 262146, 262144, 6, 196610, 196608, 6, 131074, 262144, 6, 131075, 262144, 6, 196611, 262144, 6, 262147, 262144, 6, 327683, 262144, 6, 393219, 196608, 6, 458755, 131072, 6, 524291, 262144, 6, 524292, 262144, 6, 458756, 262144, 6, 393220, 262144, 6, 327684, 262144, 6, 262148, 327680, 6, 196612, 262144, 6, 131076, 196608, 6, 131077, 327680, 6, 196613, 196608, 6, 262149, 262144, 6, 327685, 262144, 6, 393221, 65536, 6, 458757, 196608, 6, 524293, 196608, 6, 524294, 393216, 6, 458758, 327680, 6, 393222, 65536, 6, 327686, 0, 6, 327687, 327680, 6, 262151, 393216, 6, 196615, 327680, 6, 131079, 196608, 6, 65543, 262144, 6, 65544, 262144, 6, 131080, 196608, 6, 196616, 196608, 6, 262152, 262144, 6, 327688, 327680, 6, 393224, 327680, 6, 393223, 262144, 6, 458759, 262144, 6, 524295, 327680, 6, 589831, 196608, 6, 589830, 262144, 6, 589832, 196608, 6, 524296, 393216, 6, 458760, 393216, 6, 458761, 262144, 6, 393225, 393216, 6, 327689, 262144, 6, 262153, 262144, 6, 196617, 327680, 6, 131081, 262144, 6, 65545, 262144, 6, 65546, 262144, 6, 131082, 262144, 6, 196618, 262144, 6, 262154, 393216, 6, 327690, 196608, 6, 393226, 262144, 6, 458762, 262144, 6, 524298, 393216, 6, 524297, 196608, 6, 589833, 262144, 6, 589834, 262144, 6, 589835, 262144, 6, 524299, 196608, 6, 458763, 393216, 6, 393227, 262144, 6, 327691, 262144, 6, 262155, 262144, 6, 196619, 65536, 6, 131083, 262144, 6, 65547, 262144, 6, 65548, 262144, 6, 131084, 196608, 6, 196620, 262144, 6, 262156, 262144, 6, 327692, 196608, 6, 393228, 131072, 6, 458764, 262144, 6, 524300, 262144, 6, 589836, 262144, 6, 589837, 131072, 6, 524301, 327680, 6, 458765, 196608, 6, 393229, 262144, 6, 327693, 262144, 6, 262157, 196608, 6, 196621, 262144, 6, 131085, 262144, 6, 65549, 131072, 6, 65550, 262144, 6, 131086, 262144, 6, 196622, 262144, 6, 262158, 262144, 6, 327694, 262144, 6, 393230, 262144, 6, 458766, 262144, 6, 524302, 262144, 6, 589838, 262144, 6, 589839, 196608, 6, 524303, 262144, 6, 458767, 262144, 6, 393231, 262144, 6, 327695, 262144, 6, 262159, 262144, 6, 196623, 262144, 6, 131087, 262144, 6, 65551, 327680, 6, 65552, 262144, 6, 131088, 262144, 6, 196624, 262144, 6, 262160, 262144, 6, 327696, 262144, 6, 393232, 196608, 6, 458768, 262144, 6, 524304, 262144, 6, 589840, 196608, 6)
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource("2_e7ktj")
+format = 2
+layer_0/tile_data = PackedInt32Array(6, 65537, 5, 65542, 65537, 7, 65546, 65537, 7, 65545, 65537, 7, 65544, 65537, 7, 65543, 65537, 7, 7, 65537, 5, 8, 65537, 5, 9, 65537, 5, 10, 65537, 5, 5, 65537, 5, 4, 65537, 5, 3, 65537, 5, 2, 65537, 5, 1, 65537, 5, 0, 65537, 5, 65541, 65537, 7, 65540, 65537, 7, 65539, 65537, 7, 65538, 65537, 7, 65537, 65537, 7, 65536, 65537, 7, 13, 131073, 8, 65549, 131073, 7, 11, 65537, 5, 65547, 65537, 7, 12, 65537, 5, 65548, 65537, 7)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_i8f6f")
+theme_override_font_sizes/font_size = 18
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_top = 128.0
+offset_right = 576.0
+offset_bottom = 352.0
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_i8f6f")
+theme_override_font_sizes/font_size = 24
+text = "FL GAMES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_i8f6f")
+theme_override_font_sizes/font_size = 14
+text = "Marek Kotewicz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_i8f6f")
+theme_override_font_sizes/font_size = 14
+text = "Maurice Pavlidis"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 120.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_i8f6f")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uyhn7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t30ip")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4gecy")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_urwd5")
+text = "BACK"
+alignment = 0
+script = ExtResource("4_ytqxj")
+
+[node name="Light" parent="." instance=ExtResource("6_ex1bb")]
+position = Vector2(160, 60)
+scale = Vector2(2, 2)
+
+[node name="Light2" parent="." instance=ExtResource("6_ex1bb")]
+position = Vector2(416, 60)
+scale = Vector2(2, 2)
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

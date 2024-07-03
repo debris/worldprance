@@ -52,3 +52,7 @@ func cell_selected(level_data: LevelData):
 
 func _on_back_button_pressed():
 	Scenes.goto_start()
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		Scenes.goto_start()

@@ -17,6 +17,11 @@ func goto_level_select():
 	var select_level = preload("res://scenes/ui/select_level.tscn").instantiate()
 	add_child(select_level)
 
+func goto_credits():
+	clear()
+	var credits = preload("res://scenes/ui/credits.tscn").instantiate()
+	add_child(credits)
+
 func goto_level(level_data: LevelData):
 	clear()
 	var level = preload("res://scenes/level.tscn").instantiate()

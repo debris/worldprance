@@ -12,7 +12,7 @@ func _on_settings_button_pressed():
 	pass # Replace with function body.
 
 func _on_credits_button_pressed():
-	pass # Replace with function body.
+	Scenes.goto_credits()
 
 func _on_quit_button_pressed():
 	get_tree().quit()
