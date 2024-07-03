@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bteafu7enxuur"]
+[gd_scene load_steps=19 format=3 uid="uid://bteafu7enxuur"]
 
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_yskrh"]
 [ext_resource type="TileSet" uid="uid://bb4dkm2fv6jgw" path="res://resources/object_scenes.tres" id="2_5jgbv"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cvnyvfiflreo5" path="res://scenes/objects/cash.tscn" id="16_r1li2"]
 [ext_resource type="PackedScene" uid="uid://bdn2vd8u3ujd6" path="res://scenes/ui/overlay.tscn" id="17_2u8j8"]
 [ext_resource type="Texture2D" uid="uid://c5umskbou5c5f" path="res://assets/fl_games.png" id="17_gkp66"]
+[ext_resource type="Script" path="res://scripts/pause_game.gd" id="18_ydyib"]
 
 [node name="Prison0" type="Node2D"]
 
@@ -228,5 +229,8 @@ script = ExtResource("12_brai8")
 walls = NodePath("../Background")
 
 [node name="Overlay" parent="." instance=ExtResource("17_2u8j8")]
+
+[node name="PauseGame" type="Node" parent="."]
+script = ExtResource("18_ydyib")
 
 [editable path="ObjectsBehind/VaultDoor"]

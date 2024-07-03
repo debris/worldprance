@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://biuv03fi48jfp"]
+
+[ext_resource type="Script" path="res://scenes/ui/game_paused.gd" id="1_a28rj"]
+[ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="1_pljk5"]
+[ext_resource type="Script" path="res://scenes/ui/start_menu_button.gd" id="3_rvv2n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ye4ac"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qmro"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_a28rj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.705882)
+metadata/_edit_use_anchors_ = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_top = 88.0
+offset_right = 576.0
+offset_bottom = 328.0
+theme_override_constants/v_separation = 16
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pljk5")
+text = "GAME PAUSED
+EXIT?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonYes" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_pljk5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ye4ac")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8qmro")
+text = "YES"
+script = ExtResource("3_rvv2n")
+
+[node name="ButtonNo" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_pljk5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ye4ac")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8qmro")
+text = "NO"
+script = ExtResource("3_rvv2n")
+
+[connection signal="pressed" from="GridContainer/ButtonYes" to="." method="_on_button_yes_pressed"]
+[connection signal="pressed" from="GridContainer/ButtonNo" to="." method="_on_button_no_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://g8f6prk64quf"]
+[gd_scene load_steps=15 format=3 uid="uid://g8f6prk64quf"]
 
 [ext_resource type="Script" path="res://scenes/ui/select_level.gd" id="1_s1yok"]
 [ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="1_su8md"]
@@ -6,10 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://bedncojmylgkl" path="res://scenes/ui/select_level_right_panel.tscn" id="3_krga3"]
 [ext_resource type="Resource" uid="uid://bdy5rbe3tofc8" path="res://resources/levels/block_a.tres" id="4_dtneg"]
 [ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="6_e7bss"]
+[ext_resource type="Script" path="res://scenes/ui/start_menu_button.gd" id="7_xppvq"]
+[ext_resource type="PackedScene" uid="uid://bl5y3rxxuiwa" path="res://scenes/objects/light.tscn" id="8_7pvth"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk5rh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p63y0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4po8x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_edobq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3xou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ky6t"]
 
 [node name="SelectLevel" type="Node2D"]
 script = ExtResource("1_s1yok")
@@ -37,13 +47,13 @@ theme_override_constants/v_separation = 0
 columns = 2
 
 [node name="Panel" type="Panel" parent="GridContainer/GridContainer"]
-custom_minimum_size = Vector2(48, 260)
+custom_minimum_size = Vector2(48, 244)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_p63y0")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="GridContainer/GridContainer"]
 clip_contents = false
-custom_minimum_size = Vector2(336, 260)
+custom_minimum_size = Vector2(336, 244)
 layout_mode = 2
 follow_focus = true
 horizontal_scroll_mode = 0
@@ -60,7 +70,7 @@ columns = 3
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = ExtResource("3_d6ys6")
 format = 2
-layer_0/tile_data = PackedInt32Array(6, 1, 8, 11, 131073, 8, 65542, 1, 7, 65547, 131073, 7, 65546, 65537, 7, 65545, 65537, 7, 65544, 65537, 7, 65543, 65537, 7, 7, 65537, 5, 8, 65537, 5, 9, 65537, 5, 10, 65537, 5)
+layer_0/tile_data = PackedInt32Array(6, 65537, 5, 65542, 65537, 7, 65546, 65537, 7, 65545, 65537, 7, 65544, 65537, 7, 65543, 65537, 7, 7, 65537, 5, 8, 65537, 5, 9, 65537, 5, 10, 65537, 5, 5, 65537, 5, 4, 65537, 5, 3, 65537, 5, 2, 65537, 5, 1, 65537, 5, 0, 65537, 5, 65541, 65537, 7, 65540, 65537, 7, 65539, 65537, 7, 65538, 65537, 7, 65537, 65537, 7, 65536, 65537, 7, 13, 131073, 8, 65549, 131073, 7, 11, 65537, 5, 65547, 65537, 7, 12, 65537, 5, 65548, 65537, 7)
 
 [node name="RightPanel" parent="." instance=ExtResource("3_krga3")]
 offset_left = 456.0
@@ -86,6 +96,20 @@ offset_top = 16.0
 offset_right = 120.0
 offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("6_e7bss")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4po8x")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_edobq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_o3xou")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8ky6t")
 text = "BACK"
+alignment = 0
+script = ExtResource("7_xppvq")
+
+[node name="Light" parent="." instance=ExtResource("8_7pvth")]
+position = Vector2(160, 60)
+scale = Vector2(2, 2)
+
+[node name="Light2" parent="." instance=ExtResource("8_7pvth")]
+position = Vector2(416, 60)
+scale = Vector2(2, 2)
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
