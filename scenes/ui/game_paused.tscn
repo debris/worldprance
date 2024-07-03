@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://biuv03fi48jfp"]
+[gd_scene load_steps=8 format=3 uid="uid://biuv03fi48jfp"]
 
 [ext_resource type="Script" path="res://scenes/ui/game_paused.gd" id="1_a28rj"]
 [ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="1_pljk5"]
 [ext_resource type="Script" path="res://scenes/ui/start_menu_button.gd" id="3_rvv2n"]
+[ext_resource type="PackedScene" uid="uid://bedncojmylgkl" path="res://scenes/ui/select_level_right_panel.tscn" id="4_fhgl7"]
+[ext_resource type="Resource" uid="uid://bdy5rbe3tofc8" path="res://resources/levels/block_a.tres" id="5_vg4sf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ye4ac"]
 
@@ -59,6 +61,13 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ye4ac")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_8qmro")
 text = "NO"
 script = ExtResource("3_rvv2n")
+
+[node name="RightPanel" parent="." instance=ExtResource("4_fhgl7")]
+offset_left = 456.0
+offset_top = 64.0
+offset_right = 576.0
+offset_bottom = 356.0
+level_data = ExtResource("5_vg4sf")
 
 [connection signal="pressed" from="GridContainer/ButtonYes" to="." method="_on_button_yes_pressed"]
 [connection signal="pressed" from="GridContainer/ButtonNo" to="." method="_on_button_no_pressed"]

@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var button_no: Button = $GridContainer/ButtonNo
+@onready var right_panel = $RightPanel
 
 func _ready():
 	button_no.grab_focus()

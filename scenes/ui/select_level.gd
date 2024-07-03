@@ -30,21 +30,21 @@ func _ready():
 	var i = 0
 
 	for level_data in get_levels():
-		print(level_data.level_name)
+
 		var cell = preload("res://scenes/ui/select_level_cell.tscn").instantiate()
 		cell.level_data = level_data
 		cell.cell_selected.connect(cell_selected)
 		levels_grid.add_child(cell)
+
+		if i == 0:
+			cell.button.grab_focus()
+			back_button.focus_neighbor_bottom = back_button.get_path_to(cell.button)
 
 		if i < 3:
 			cell.button.focus_neighbor_top = cell.button.get_path_to(back_button)
 
 		i += 1
 
-	var child = levels_grid.get_child(0)
-	child.button.grab_focus()
-
-	back_button.focus_neighbor_bottom = back_button.get_path_to(child.button)
 
 func cell_selected(level_data: LevelData):
 	right_panel.level_data = level_data

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwgi7m472xbr3"]
+
+[ext_resource type="Texture2D" uid="uid://xdjoheyr8wff" path="res://assets/empty_star.png" id="1_jgbhc"]
+[ext_resource type="Script" path="res://scenes/ui/star.gd" id="2_c80yj"]
+
+[node name="Star" type="Sprite2D"]
+scale = Vector2(0.026, 0.026)
+texture = ExtResource("1_jgbhc")
+script = ExtResource("2_c80yj")

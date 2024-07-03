@@ -1,12 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://dq6vkdcavn1fd"]
+[gd_scene load_steps=15 format=3 uid="uid://dq6vkdcavn1fd"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_os21m"]
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_vmom2"]
 [ext_resource type="PackedScene" uid="uid://b6ufl0rqdaxid" path="res://scenes/player.tscn" id="2_ud0gr"]
 [ext_resource type="Resource" uid="uid://blt14ye6r4b24" path="res://resources/inputs/player2.tres" id="3_qt2qk"]
-[ext_resource type="Script" path="res://scripts/change_level.gd" id="5_26hhc"]
 [ext_resource type="TileSet" uid="uid://csl1ftnr6oxto" path="res://resources/objects_tileset.tres" id="5_t6tlo"]
-[ext_resource type="Resource" uid="uid://dvradrrw80d01" path="res://resources/map/root.tres" id="6_gn7nf"]
 [ext_resource type="PackedScene" uid="uid://cvnyvfiflreo5" path="res://scenes/objects/cash.tscn" id="7_ndk05"]
 [ext_resource type="PackedScene" uid="uid://bdn2vd8u3ujd6" path="res://scenes/ui/overlay.tscn" id="8_jkuor"]
 [ext_resource type="PackedScene" uid="uid://bl5y3rxxuiwa" path="res://scenes/objects/light.tscn" id="9_aunqf"]
@@ -78,7 +76,7 @@ position = Vector2(-1411.2, 0)
 curve = SubResource("Curve2D_hrjpf")
 
 [node name="Platform2" parent="EnvMovement" instance=ExtResource("12_7b4j6")]
-position = Vector2(571.197, 96)
+position = Vector2(455.04, 96)
 
 [node name="Cash" type="Node" parent="."]
 
@@ -105,11 +103,6 @@ scale = Vector2(1.5, 1.5)
 [node name="Cash6" parent="Cash" instance=ExtResource("7_ndk05")]
 position = Vector2(688, 424)
 scale = Vector2(1.5, 1.5)
-
-[node name="ChangeLevel" type="Node" parent="." node_paths=PackedStringArray("level")]
-script = ExtResource("5_26hhc")
-level = NodePath("..")
-game_level = ExtResource("6_gn7nf")
 
 [node name="Overlay" parent="." instance=ExtResource("8_jkuor")]
 

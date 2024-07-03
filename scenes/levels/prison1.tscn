@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhibep53ofd7x"]
+[gd_scene load_steps=3 format=3 uid="uid://dhibep53ofd7x"]
 
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_wgxel"]
 [ext_resource type="PackedScene" uid="uid://b6ufl0rqdaxid" path="res://scenes/player.tscn" id="2_v3078"]
-[ext_resource type="Script" path="res://scripts/change_level.gd" id="3_bukfm"]
-[ext_resource type="Resource" uid="uid://cbprxmgg57c5d" path="res://resources/map/prison1.tres" id="4_6y37r"]
 
 [node name="Prison1" type="Node2D"]
 
@@ -25,8 +23,3 @@ limit_left = 0
 limit_top = 0
 limit_right = 832
 limit_bottom = 324
-
-[node name="ChangeLevel" type="Node" parent="." node_paths=PackedStringArray("level")]
-script = ExtResource("3_bukfm")
-level = NodePath("..")
-game_level = ExtResource("4_6y37r")

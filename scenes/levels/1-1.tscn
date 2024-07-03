@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://tireaajx2cfd"]
+[gd_scene load_steps=4 format=3 uid="uid://tireaajx2cfd"]
 
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_axhjh"]
 [ext_resource type="PackedScene" uid="uid://b6ufl0rqdaxid" path="res://scenes/player.tscn" id="2_hkne8"]
-[ext_resource type="Script" path="res://scripts/change_level.gd" id="3_8py1a"]
-[ext_resource type="Resource" uid="uid://dnqxtepd61w47" path="res://resources/map/1-1.tres" id="4_3ybqy"]
 [ext_resource type="PackedScene" uid="uid://vv5ypmu1te4v" path="res://scenes/objects/card.tscn" id="5_g76h4"]
 
 [node name="1-1" type="Node2D"]
@@ -20,11 +18,6 @@ layer_1/tile_data = PackedInt32Array(1245204, 196608, 5, 1245203, 196608, 5, 124
 position = Vector2(135, 375)
 scale = Vector2(1.5, 1.5)
 player_name = "default"
-
-[node name="ChangeLevel" type="Node" parent="." node_paths=PackedStringArray("level")]
-script = ExtResource("3_8py1a")
-level = NodePath("..")
-game_level = ExtResource("4_3ybqy")
 
 [node name="Card" parent="." instance=ExtResource("5_g76h4")]
 position = Vector2(944, 136)

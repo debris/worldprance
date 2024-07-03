@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bteafu7enxuur"]
+[gd_scene load_steps=15 format=3 uid="uid://bteafu7enxuur"]
 
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_yskrh"]
 [ext_resource type="TileSet" uid="uid://bb4dkm2fv6jgw" path="res://resources/object_scenes.tres" id="2_5jgbv"]
@@ -6,18 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://bl5y3rxxuiwa" path="res://scenes/objects/light.tscn" id="3_usd6m"]
 [ext_resource type="PackedScene" uid="uid://d3hs5w1ymderf" path="res://scenes/objects/door.tscn" id="4_pqiqs"]
 [ext_resource type="PackedScene" uid="uid://c7uw4g4so23t8" path="res://scenes/objects/button.tscn" id="5_65h6e"]
-[ext_resource type="Script" path="res://scripts/change_level.gd" id="6_4p5ft"]
 [ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="6_nes4g"]
-[ext_resource type="Resource" uid="uid://c2yjrr5iypg21" path="res://resources/map/prison0.tres" id="7_t2i6x"]
 [ext_resource type="PackedScene" uid="uid://crtnv46uf524x" path="res://scenes/objects/vault_door.tscn" id="9_0m66d"]
 [ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="9_k4md0"]
 [ext_resource type="Script" path="res://scripts/player_camera.gd" id="10_d11rv"]
 [ext_resource type="Script" path="res://scripts/alarm.gd" id="12_brai8"]
 [ext_resource type="PackedScene" uid="uid://7smjtqjl6ctj" path="res://scenes/objects/thin_floor.tscn" id="13_7w606"]
 [ext_resource type="PackedScene" uid="uid://cvnyvfiflreo5" path="res://scenes/objects/cash.tscn" id="16_r1li2"]
-[ext_resource type="PackedScene" uid="uid://bdn2vd8u3ujd6" path="res://scenes/ui/overlay.tscn" id="17_2u8j8"]
 [ext_resource type="Texture2D" uid="uid://c5umskbou5c5f" path="res://assets/fl_games.png" id="17_gkp66"]
-[ext_resource type="Script" path="res://scripts/pause_game.gd" id="18_ydyib"]
 
 [node name="Prison0" type="Node2D"]
 
@@ -219,18 +215,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ChangeLevel" type="Node" parent="." node_paths=PackedStringArray("level")]
-script = ExtResource("6_4p5ft")
-level = NodePath("..")
-game_level = ExtResource("7_t2i6x")
-
 [node name="Alarm" type="Node" parent="." node_paths=PackedStringArray("walls")]
 script = ExtResource("12_brai8")
 walls = NodePath("../Background")
-
-[node name="Overlay" parent="." instance=ExtResource("17_2u8j8")]
-
-[node name="PauseGame" type="Node" parent="."]
-script = ExtResource("18_ydyib")
 
 [editable path="ObjectsBehind/VaultDoor"]

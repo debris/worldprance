@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bs6nx16xi66bf"]
+[gd_scene load_steps=15 format=3 uid="uid://bs6nx16xi66bf"]
 
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_4fp0p"]
 [ext_resource type="TileSet" uid="uid://bb4dkm2fv6jgw" path="res://resources/object_scenes.tres" id="2_auud0"]
@@ -13,8 +13,6 @@
 [ext_resource type="Script" path="res://scripts/player_camera.gd" id="11_6fqt1"]
 [ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="11_35g6p"]
 [ext_resource type="PackedScene" uid="uid://7smjtqjl6ctj" path="res://scenes/objects/thin_floor.tscn" id="12_4jabl"]
-[ext_resource type="Script" path="res://scripts/change_level.gd" id="14_xhxnr"]
-[ext_resource type="Resource" uid="uid://nqtjhxwq3rky" path="res://resources/map/prison0-d.tres" id="15_h2ohx"]
 [ext_resource type="Script" path="res://scripts/alarm.gd" id="16_ph33k"]
 
 [node name="Prison0" type="Node2D"]
@@ -223,11 +221,6 @@ text = "A03"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="ChangeLevel" type="Node" parent="." node_paths=PackedStringArray("level")]
-script = ExtResource("14_xhxnr")
-level = NodePath("..")
-game_level = ExtResource("15_h2ohx")
 
 [node name="Alarm" type="Node" parent="." node_paths=PackedStringArray("walls")]
 script = ExtResource("16_ph33k")

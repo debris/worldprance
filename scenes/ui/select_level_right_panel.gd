@@ -28,4 +28,4 @@ func _update_data():
 func _on_start_button_pressed():
 	pass
 	#print("goto: " + level_data.scene_name)
-	Scenes.goto_level(level_data.scene_name)
+	Scenes.goto_level(level_data)

@@ -30,6 +30,7 @@ config/icon="res://assets/icon.svg"
 State="*res://global/state.gd"
 Scenes="*res://global/scenes.gd"
 Sounds="*res://global/sounds.gd"
+Records="*res://global/records.gd"
 
 [display]
 

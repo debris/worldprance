@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cv5sfua4e41yl"]
+[gd_scene load_steps=10 format=3 uid="uid://cv5sfua4e41yl"]
 
 [ext_resource type="TileSet" uid="uid://b85edn0lxsvdt" path="res://resources/frames.tres" id="1_so7vb"]
 [ext_resource type="Script" path="res://scenes/ui/select_level_cell.gd" id="1_w3utl"]
 [ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="2_nfkkr"]
-[ext_resource type="Texture2D" uid="uid://xdjoheyr8wff" path="res://assets/empty_star.png" id="3_mawlr"]
-[ext_resource type="Texture2D" uid="uid://jocn02fl6k6c" path="res://assets/full_star.png" id="4_nvgdg"]
+[ext_resource type="PackedScene" uid="uid://cwgi7m472xbr3" path="res://scenes/ui/star.tscn" id="4_vg2co"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mdmlw"]
 
@@ -40,20 +39,14 @@ theme_override_font_sizes/font_size = 12
 text = "LEVEL 0"
 horizontal_alignment = 1
 
-[node name="EmptyStar" type="Sprite2D" parent="."]
-position = Vector2(48, 64)
-scale = Vector2(0.026, 0.026)
-texture = ExtResource("3_mawlr")
-
-[node name="EmptyStar3" type="Sprite2D" parent="."]
+[node name="Star" parent="." instance=ExtResource("4_vg2co")]
 position = Vector2(24, 64)
-scale = Vector2(0.026, 0.026)
-texture = ExtResource("4_nvgdg")
 
-[node name="EmptyStar2" type="Sprite2D" parent="."]
+[node name="Star2" parent="." instance=ExtResource("4_vg2co")]
+position = Vector2(48, 64)
+
+[node name="Star3" parent="." instance=ExtResource("4_vg2co")]
 position = Vector2(72, 64)
-scale = Vector2(0.026, 0.026)
-texture = ExtResource("3_mawlr")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
