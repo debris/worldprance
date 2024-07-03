@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c50e1bwj48gvl"]
+[gd_scene load_steps=5 format=3 uid="uid://c50e1bwj48gvl"]
 
 [ext_resource type="Script" path="res://scenes/level.gd" id="1_0mfir"]
 [ext_resource type="PackedScene" uid="uid://bdn2vd8u3ujd6" path="res://scenes/ui/overlay.tscn" id="2_p6ffd"]
 [ext_resource type="Script" path="res://scripts/pause_game.gd" id="3_vyfe3"]
+[ext_resource type="Script" path="res://scripts/reset_state.gd" id="4_nvqke"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0mfir")
+
+[node name="ResetState" type="Node" parent="."]
+script = ExtResource("4_nvqke")
 
 [node name="Overlay" parent="." instance=ExtResource("2_p6ffd")]
 

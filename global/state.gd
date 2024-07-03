@@ -6,6 +6,11 @@ var player_data_by_name: Dictionary
 var value_by_collectible: Dictionary
 var cached_values: Dictionary
 
+func reset():
+	player_data_by_name.clear()
+	value_by_collectible.clear()
+	cached_values.clear()
+
 func get_player_data(player_name: String) -> PlayerData:
 	return player_data_by_name.get(player_name)
 
