@@ -64,9 +64,9 @@ layer_0/tile_data = PackedInt32Array(6, 1, 8, 11, 131073, 8, 65542, 1, 7, 65547,
 
 [node name="RightPanel" parent="." instance=ExtResource("3_krga3")]
 offset_left = 456.0
-offset_top = 16.0
+offset_top = 64.0
 offset_right = 576.0
-offset_bottom = 308.0
+offset_bottom = 356.0
 level_data = ExtResource("4_dtneg")
 
 [node name="Label" type="Label" parent="."]
@@ -79,3 +79,13 @@ theme_override_font_sizes/font_size = 18
 text = "MISSIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 120.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("6_e7bss")
+text = "BACK"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

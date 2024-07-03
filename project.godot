@@ -21,7 +21,7 @@ resources_spreadsheet_view/context_menu_on_leftclick=false
 [application]
 
 config/name="worldprance"
-run/main_scene="res://scenes/ui/select_level.tscn"
+run/main_scene="res://scenes/ui/start.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
@@ -29,6 +29,7 @@ config/icon="res://assets/icon.svg"
 
 State="*res://global/state.gd"
 Scenes="*res://global/scenes.gd"
+Sounds="*res://global/sounds.gd"
 
 [display]
 

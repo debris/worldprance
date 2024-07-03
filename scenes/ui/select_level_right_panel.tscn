@@ -15,7 +15,7 @@ script = ExtResource("1_h3v45")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_v70c0")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 524289, 0, 65536, 524289, 1, 131072, 524289, 1, 196608, 524289, 1, 262144, 524289, 1, 327680, 524289, 1, 393216, 524289, 1, 458752, 524289, 1, 524288, 524289, 2, 524289, 524289, 5, 524290, 524289, 5, 524291, 524289, 5, 1, 524289, 3, 2, 524289, 3, 3, 524289, 3, 458753, 524289, 4, 393217, 524289, 4, 327681, 524289, 4, 262145, 524289, 4, 196609, 524289, 4, 131073, 524289, 4, 65537, 524289, 4, 458754, 524289, 4, 393218, 524289, 4, 327682, 524289, 4, 262146, 524289, 4, 196610, 524289, 4, 131074, 524289, 4, 65538, 524289, 4, 458755, 524289, 4, 393219, 524289, 4, 327683, 524289, 4, 262147, 524289, 4, 196611, 524289, 4, 131075, 524289, 4, 65539, 524289, 4)
+layer_0/tile_data = PackedInt32Array(0, 524289, 0, 65536, 524289, 1, 131072, 524289, 1, 196608, 524289, 1, 262144, 524289, 1, 327680, 524289, 1, 1, 524289, 3, 2, 524289, 3, 3, 524289, 3, 327681, 524289, 4, 262145, 524289, 4, 196609, 524289, 4, 131073, 524289, 4, 65537, 524289, 4, 327682, 524289, 4, 262146, 524289, 4, 196610, 524289, 4, 131074, 524289, 4, 65538, 524289, 4, 327683, 524289, 4, 262147, 524289, 4, 196611, 524289, 4, 131075, 524289, 4, 65539, 524289, 4, 393216, 524289, 2, 393217, 524289, 5, 393218, 524289, 5, 393219, 524289, 5)
 
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 0
@@ -59,7 +59,7 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="Task0" type="Label" parent="GridContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 20)
+custom_minimum_size = Vector2(2.08165e-12, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -92,7 +92,7 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="Task1" type="Label" parent="GridContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 20)
+custom_minimum_size = Vector2(2.08165e-12, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -125,7 +125,7 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="Task2" type="Label" parent="GridContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 20)
+custom_minimum_size = Vector2(2.08165e-12, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -136,6 +136,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="StartButton" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 16.0
 offset_top = 240.0

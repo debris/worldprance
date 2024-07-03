@@ -33,5 +33,12 @@ func _ready():
 		cell.cell_selected.connect(cell_selected)
 		levels_grid.add_child(cell)
 
+	var child = levels_grid.get_child(0)
+	child.button.grab_focus()
+
 func cell_selected(level_data: LevelData):
 	right_panel.level_data = level_data
+
+
+func _on_back_button_pressed():
+	Scenes.goto_start()
