@@ -1,8 +1,5 @@
 extends Node2D
 
-func _ready():
-	goto_start()
-
 func clear():
 	for child in get_children():
 		child.queue_free()
