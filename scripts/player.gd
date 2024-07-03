@@ -89,8 +89,6 @@ func save_player_data():
 	player_data.double_jumped = double_jumped
 	State.update_player_data(player_name, player_data)
 
-
-
 func _on_ladder_entered(area: Area2D):
 	is_on_ladder += 1
 	ladder_position_x = area.global_position.x
@@ -99,3 +97,7 @@ func _on_ladder_exited(_area: Area2D):
 	is_on_ladder -= 1
 	if is_on_ladder == 0:
 		is_climbing = false
+
+func _on_danger_area_entered(_area: Area2D):
+	print_debug("danger")
+	dead = true

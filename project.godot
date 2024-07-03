@@ -135,6 +135,7 @@ dimension={
 2d_physics/layer_4="usable"
 2d_physics/layer_5="pushable"
 2d_physics/layer_6="ladder"
+2d_physics/layer_7="danger"
 
 [rendering]
 
