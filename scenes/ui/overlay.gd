@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var cash_label: Label = $MarginContainer/GridContainer/CashLabel
+@onready var cash_label: Label = $GridContainer/Control/CashLabel
 
 func _ready():
 	update_cash_label()
@@ -9,4 +9,4 @@ func _ready():
 	)
 
 func update_cash_label():
-	cash_label.text = "cash: " + str(State.get_collectible_count("cash"))
+	cash_label.text = str(State.get_collectible_count("cash"))
