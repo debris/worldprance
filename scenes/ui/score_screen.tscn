@@ -1,0 +1,261 @@
+[gd_scene load_steps=15 format=3 uid="uid://bh4x6tiko4ocx"]
+
+[ext_resource type="PackedScene" uid="uid://7rg6tq354fka" path="res://scenes/world_environment.tscn" id="1_8gbaa"]
+[ext_resource type="Script" path="res://scenes/ui/score_screen.gd" id="1_shclt"]
+[ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="2_g6n7y"]
+[ext_resource type="Resource" uid="uid://bdy5rbe3tofc8" path="res://resources/levels/block_a.tres" id="2_xx08w"]
+[ext_resource type="TileSet" uid="uid://b85edn0lxsvdt" path="res://resources/frames.tres" id="3_wlgum"]
+[ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="4_mi7rf"]
+[ext_resource type="PackedScene" uid="uid://cwgi7m472xbr3" path="res://scenes/ui/star.tscn" id="5_geb7j"]
+[ext_resource type="PackedScene" uid="uid://bl5y3rxxuiwa" path="res://scenes/objects/light.tscn" id="5_p0k35"]
+[ext_resource type="Texture2D" uid="uid://jocn02fl6k6c" path="res://assets/full_star.png" id="6_t8hnt"]
+[ext_resource type="Script" path="res://scenes/ui/start_menu_button.gd" id="10_qvrnf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eoshe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rl0o5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uv6j0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpae6"]
+
+[node name="ScoreScreen" type="Node2D"]
+script = ExtResource("1_shclt")
+level_data = ExtResource("2_xx08w")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_8gbaa")]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_g6n7y")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 262144, 6, 65536, 0, 6, 131072, 196608, 6, 196608, 327680, 6, 262144, 327680, 6, 327680, 393216, 6, 393216, 327680, 6, 458752, 262144, 6, 524288, 393216, 6, 589824, 262144, 6, 655360, 196608, 6, 655361, 262144, 6, 655362, 262144, 6, 589827, 262144, 6, 589828, 262144, 6, 589829, 262144, 6, 655363, 131072, 6, 655364, 262144, 6, 655365, 196608, 6, 655366, 262144, 6, 655367, 262144, 6, 655368, 262144, 6, 655369, 262144, 6, 655370, 262144, 6, 655371, 262144, 6, 655372, 393216, 6, 655373, 393216, 6, 655374, 262144, 6, 655375, 262144, 6, 655376, 262144, 6, 655377, 262144, 6, 589841, 262144, 6, 524305, 262144, 6, 458769, 262144, 6, 393233, 262144, 6, 327697, 262144, 6, 262161, 262144, 6, 196625, 262144, 6, 131089, 262144, 6, 65553, 262144, 6, 17, 262144, 6, 16, 196608, 6, 15, 262144, 6, 14, 262144, 6, 13, 262144, 6, 12, 262144, 6, 11, 262144, 6, 10, 262144, 6, 9, 262144, 6, 8, 262144, 6, 7, 262144, 6, 6, 262144, 6, 5, 327680, 6, 4, 327680, 6, 3, 262144, 6, 2, 196608, 6, 1, 262144, 6, 262150, 262144, 6, 196614, 262144, 6, 131078, 262144, 6, 65542, 262144, 6, 65541, 262144, 6, 65540, 262144, 6, 65539, 262144, 6, 65538, 262144, 6, 65537, 65536, 6, 131073, 327680, 6, 196609, 262144, 6, 262145, 262144, 6, 327681, 393216, 6, 393217, 262144, 6, 458753, 196608, 6, 524289, 262144, 6, 589825, 393216, 6, 589826, 196608, 6, 524290, 262144, 6, 458754, 131072, 6, 393218, 262144, 6, 327682, 196608, 6, 262146, 262144, 6, 196610, 196608, 6, 131074, 262144, 6, 131075, 262144, 6, 196611, 262144, 6, 262147, 262144, 6, 327683, 262144, 6, 393219, 196608, 6, 458755, 131072, 6, 524291, 262144, 6, 524292, 262144, 6, 458756, 262144, 6, 393220, 262144, 6, 327684, 262144, 6, 262148, 327680, 6, 196612, 262144, 6, 131076, 196608, 6, 131077, 327680, 6, 196613, 196608, 6, 262149, 262144, 6, 327685, 262144, 6, 393221, 65536, 6, 458757, 196608, 6, 524293, 196608, 6, 524294, 393216, 6, 458758, 327680, 6, 393222, 65536, 6, 327686, 0, 6, 327687, 327680, 6, 262151, 393216, 6, 196615, 327680, 6, 131079, 196608, 6, 65543, 262144, 6, 65544, 262144, 6, 131080, 196608, 6, 196616, 196608, 6, 262152, 262144, 6, 327688, 327680, 6, 393224, 327680, 6, 393223, 262144, 6, 458759, 262144, 6, 524295, 327680, 6, 589831, 196608, 6, 589830, 262144, 6, 589832, 196608, 6, 524296, 393216, 6, 458760, 393216, 6, 458761, 262144, 6, 393225, 393216, 6, 327689, 262144, 6, 262153, 262144, 6, 196617, 327680, 6, 131081, 262144, 6, 65545, 262144, 6, 65546, 262144, 6, 131082, 262144, 6, 196618, 262144, 6, 262154, 393216, 6, 327690, 196608, 6, 393226, 262144, 6, 458762, 262144, 6, 524298, 393216, 6, 524297, 196608, 6, 589833, 262144, 6, 589834, 262144, 6, 589835, 262144, 6, 524299, 196608, 6, 458763, 393216, 6, 393227, 262144, 6, 327691, 262144, 6, 262155, 262144, 6, 196619, 65536, 6, 131083, 262144, 6, 65547, 262144, 6, 65548, 262144, 6, 131084, 196608, 6, 196620, 262144, 6, 262156, 262144, 6, 327692, 196608, 6, 393228, 131072, 6, 458764, 262144, 6, 524300, 262144, 6, 589836, 262144, 6, 589837, 131072, 6, 524301, 327680, 6, 458765, 196608, 6, 393229, 262144, 6, 327693, 262144, 6, 262157, 196608, 6, 196621, 262144, 6, 131085, 262144, 6, 65549, 131072, 6, 65550, 262144, 6, 131086, 262144, 6, 196622, 262144, 6, 262158, 262144, 6, 327694, 262144, 6, 393230, 262144, 6, 458766, 262144, 6, 524302, 262144, 6, 589838, 262144, 6, 589839, 196608, 6, 524303, 262144, 6, 458767, 262144, 6, 393231, 262144, 6, 327695, 262144, 6, 262159, 262144, 6, 196623, 262144, 6, 131087, 262144, 6, 65551, 327680, 6, 65552, 262144, 6, 131088, 262144, 6, 196624, 262144, 6, 262160, 262144, 6, 327696, 262144, 6, 393232, 196608, 6, 458768, 262144, 6, 524304, 262144, 6, 589840, 196608, 6)
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource("3_wlgum")
+format = 2
+layer_0/tile_data = PackedInt32Array(6, 65537, 8, 65542, 262145, 8, 65546, 65537, 7, 65545, 262145, 8, 65544, 65537, 7, 65543, 262145, 8, 7, 65537, 8, 8, 65537, 5, 9, 65537, 5, 10, 65537, 8, 5, 65537, 5, 4, 65537, 8, 3, 65537, 5, 2, 65537, 5, 1, 65537, 8, 0, 65537, 8, 65541, 65537, 7, 65540, 65537, 7, 65539, 262145, 8, 65538, 65537, 7, 65537, 65537, 7, 65536, 65537, 7, 13, 131073, 8, 65549, 131073, 7, 11, 65537, 8, 65547, 65537, 7, 12, 65537, 5, 65548, 65537, 7)
+
+[node name="TileMap3" type="TileMap" parent="."]
+tile_set = ExtResource("3_wlgum")
+format = 2
+layer_0/tile_data = PackedInt32Array(524299, 65537, 7, 524298, 65537, 7, 524297, 65537, 7, 524296, 65537, 7, 524295, 65537, 7, 524294, 65537, 7, 524293, 65537, 7, 524292, 65537, 7, 524291, 65537, 7, 524290, 1, 7, 196619, 65537, 5, 196618, 65537, 5, 196617, 65537, 5, 196616, 65537, 5, 196615, 65537, 5, 196614, 65537, 5, 196613, 65537, 5, 196612, 65537, 5, 196611, 65537, 5, 196610, 1, 5, 262146, 1, 6, 393218, 1, 6, 458754, 1, 6, 458755, 65537, 6, 393219, 65537, 6, 327683, 65537, 6, 262147, 65537, 6, 262148, 65537, 6, 327684, 65537, 6, 393220, 65537, 6, 458756, 65537, 6, 458757, 65537, 6, 393221, 65537, 6, 327685, 65537, 6, 262149, 65537, 6, 262150, 65537, 6, 327686, 65537, 6, 393222, 65537, 6, 458758, 65537, 6, 458759, 65537, 6, 393223, 65537, 6, 327687, 65537, 6, 262151, 65537, 6, 262152, 65537, 6, 327688, 65537, 6, 393224, 65537, 6, 458760, 65537, 6, 458761, 65537, 6, 393225, 65537, 6, 327689, 65537, 6, 262153, 65537, 6, 262154, 65537, 6, 327690, 65537, 6, 393226, 65537, 6, 458762, 65537, 6, 458763, 65537, 6, 393227, 65537, 6, 327691, 65537, 6, 262155, 65537, 6, 327682, 1, 6, 196621, 65537, 5, 262157, 65537, 6, 327693, 65537, 6, 393229, 65537, 6, 458765, 65537, 6, 524301, 65537, 7, 196620, 65537, 5, 262156, 65537, 6, 327692, 65537, 6, 393228, 65537, 6, 458764, 65537, 6, 524300, 65537, 7, 196622, 65537, 5, 262158, 65537, 6, 327694, 65537, 6, 393230, 65537, 6, 458766, 65537, 6, 524302, 65537, 7, 196623, 131073, 5, 262159, 131073, 6, 327695, 131073, 6, 393231, 131073, 6, 458767, 131073, 6, 524303, 131073, 7)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 16.0
+offset_right = 384.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 18
+text = "SCORE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestRecord" type="GridContainer" parent="."]
+offset_left = 80.0
+offset_top = 112.0
+offset_right = 128.0
+offset_bottom = 352.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="TitleLabel" type="Label" parent="BestRecord"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 12
+text = "BEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="BestRecord"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 12
+text = "00:24"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CashLabel" type="Label" parent="BestRecord"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 12
+text = "300"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="BestRecord"]
+custom_minimum_size = Vector2(2.08165e-12, 24)
+layout_mode = 2
+
+[node name="Star" parent="BestRecord/Control" instance=ExtResource("5_geb7j")]
+position = Vector2(24, 12)
+texture = ExtResource("6_t8hnt")
+is_on = true
+
+[node name="Control2" type="Control" parent="BestRecord"]
+custom_minimum_size = Vector2(2.08165e-12, 24)
+layout_mode = 2
+
+[node name="Star" parent="BestRecord/Control2" instance=ExtResource("5_geb7j")]
+position = Vector2(24, 12)
+
+[node name="Control3" type="Control" parent="BestRecord"]
+custom_minimum_size = Vector2(2.08165e-12, 24)
+layout_mode = 2
+
+[node name="Star" parent="BestRecord/Control3" instance=ExtResource("5_geb7j")]
+position = Vector2(24, 12)
+
+[node name="ThisRecord" type="GridContainer" parent="."]
+offset_left = 128.0
+offset_top = 112.0
+offset_right = 176.0
+offset_bottom = 352.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="TitleLabel" type="Label" parent="ThisRecord"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 12
+text = "THIS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="ThisRecord"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 12
+text = "00:24"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CashLabel" type="Label" parent="ThisRecord"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 12
+text = "300"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="ThisRecord"]
+custom_minimum_size = Vector2(2.08165e-12, 24)
+layout_mode = 2
+
+[node name="Star" parent="ThisRecord/Control" instance=ExtResource("5_geb7j")]
+position = Vector2(24, 12)
+texture = ExtResource("6_t8hnt")
+is_on = true
+
+[node name="Control2" type="Control" parent="ThisRecord"]
+custom_minimum_size = Vector2(2.08165e-12, 24)
+layout_mode = 2
+
+[node name="Star" parent="ThisRecord/Control2" instance=ExtResource("5_geb7j")]
+position = Vector2(24, 12)
+
+[node name="Control3" type="Control" parent="ThisRecord"]
+custom_minimum_size = Vector2(2.08165e-12, 24)
+layout_mode = 2
+
+[node name="Star" parent="ThisRecord/Control3" instance=ExtResource("5_geb7j")]
+position = Vector2(24, 12)
+
+[node name="Info" type="GridContainer" parent="."]
+offset_left = 184.0
+offset_top = 111.0
+offset_right = 512.0
+offset_bottom = 351.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="TitleLabel" type="Label" parent="Info"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 8
+text = "
+"
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="Info"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 8
+text = "TIME"
+vertical_alignment = 1
+
+[node name="CashLabel" type="Label" parent="Info"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 8
+text = "CASH"
+vertical_alignment = 1
+
+[node name="TaskLabel" type="Label" parent="Info"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 8
+text = "COMPLETE"
+vertical_alignment = 1
+
+[node name="TaskLabel1" type="Label" parent="Info"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 8
+text = "Collect 300 cash and comeplete level in under 30 seconds"
+vertical_alignment = 1
+
+[node name="TaskLabel2" type="Label" parent="Info"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_font_sizes/font_size = 8
+text = "Complete under 15 seconds"
+vertical_alignment = 1
+
+[node name="Light" parent="." instance=ExtResource("5_p0k35")]
+position = Vector2(152, 64)
+scale = Vector2(2, 2)
+
+[node name="Light2" parent="." instance=ExtResource("5_p0k35")]
+position = Vector2(416, 60)
+scale = Vector2(2, 2)
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 120.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("4_mi7rf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eoshe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rl0o5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uv6j0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cpae6")
+text = "BACK"
+alignment = 0
+script = ExtResource("10_qvrnf")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

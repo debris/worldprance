@@ -60,6 +60,7 @@ texture = ExtResource("6_j2lxr")
 
 [node name="Label2" type="Label" parent="GridContainer/Jump"]
 layout_mode = 0
+offset_top = 4.0
 offset_right = 16.0
 offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("1_vtwv1")
@@ -91,6 +92,7 @@ vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="GridContainer/Use"]
 layout_mode = 0
+offset_top = 4.0
 offset_right = 16.0
 offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("1_vtwv1")
@@ -111,6 +113,7 @@ texture = ExtResource("5_u3fks")
 
 [node name="Label6" type="Label" parent="GridContainer/Hit"]
 layout_mode = 0
+offset_top = 4.0
 offset_right = 16.0
 offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("1_vtwv1")
@@ -142,6 +145,7 @@ texture = ExtResource("3_jlggp")
 
 [node name="Label7" type="Label" parent="GridContainer/Alt"]
 layout_mode = 0
+offset_top = 4.0
 offset_right = 16.0
 offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("1_vtwv1")

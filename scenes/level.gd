@@ -16,7 +16,7 @@ func _ready():
 
 	State.finished.connect(func(level_record):
 		Records.save_level_record(level_data.level_name, level_record)
-		Scenes.goto_level_select()
+		Scenes.goto_score_screen(level_data, level_record)
 	)
 
 func start():

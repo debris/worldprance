@@ -13,11 +13,12 @@ func save_level_record(level_name: String, level_record: LevelRecord):
 	# TODO: update instead of overwrite ?	
 	var existing = get_level_record(level_name)
 
-	level_record.task0 = level_record.task0 || existing.task0
-	level_record.task1 = level_record.task1 || existing.task1
-	level_record.task2 = level_record.task2 || existing.task2
-	level_record.best_time = min(level_record.best_time, existing.best_time)
+	var record = LevelRecord.new()
+	record.task0 = level_record.task0 || existing.task0
+	record.task1 = level_record.task1 || existing.task1
+	record.task2 = level_record.task2 || existing.task2
+	record.best_time = min(level_record.best_time, existing.best_time)
 
 	var filename = save_path(level_name)
-	var result = ResourceSaver.save(level_record, filename)
+	var result = ResourceSaver.save(record, filename)
 	print_debug("save result: " + str(result))

@@ -30,3 +30,10 @@ func goto_level(level_data: LevelData):
 
 func restart_last_level():
 	goto_level(last_level_data)
+
+func goto_score_screen(level_data: LevelData, this_record: LevelRecord):
+	clear()
+	var score_screen = preload("res://scenes/ui/score_screen.tscn").instantiate()
+	score_screen.level_data = last_level_data
+	score_screen.this_record = this_record
+	add_child(score_screen)
