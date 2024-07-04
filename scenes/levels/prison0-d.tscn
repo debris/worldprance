@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://bs6nx16xi66bf"]
+[gd_scene load_steps=19 format=3 uid="uid://bs6nx16xi66bf"]
 
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_4fp0p"]
+[ext_resource type="PackedScene" uid="uid://7rg6tq354fka" path="res://scenes/world_environment.tscn" id="1_n76ie"]
 [ext_resource type="TileSet" uid="uid://bb4dkm2fv6jgw" path="res://resources/object_scenes.tres" id="2_auud0"]
 [ext_resource type="PackedScene" uid="uid://bl5y3rxxuiwa" path="res://scenes/objects/light.tscn" id="3_oh86x"]
 [ext_resource type="Texture2D" uid="uid://c5umskbou5c5f" path="res://assets/fl_games.png" id="4_tcvhr"]
@@ -21,6 +22,8 @@
 script = ExtResource("16_b8vlu")
 
 [node name="Prison0" type="Node2D"]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_n76ie")]
 
 [node name="Background" type="TileMap" parent="."]
 modulate = Color(1, 0, 0, 1)
@@ -83,6 +86,7 @@ texture = ExtResource("4_tcvhr")
 modulate = Color(1, 0, 0, 1)
 
 [node name="Label" type="Label" parent="Labels"]
+modulate = Color(1.2, 1, 1, 1)
 offset_left = 40.0
 offset_top = 32.0
 offset_right = 112.0
@@ -95,6 +99,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="Labels"]
+modulate = Color(1.2, 1, 1, 1)
 offset_left = 440.0
 offset_top = 208.0
 offset_right = 512.0
@@ -118,7 +123,7 @@ metadata/_edit_group_ = true
 on = true
 
 [node name="Door" parent="ObjectsBehind" instance=ExtResource("8_vympu")]
-position = Vector2(528, 224)
+position = Vector2(560, 224)
 
 [node name="Door2" parent="ObjectsBehind" instance=ExtResource("8_vympu")]
 position = Vector2(128, 64)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://bteafu7enxuur"]
+[gd_scene load_steps=20 format=3 uid="uid://bteafu7enxuur"]
 
+[ext_resource type="PackedScene" uid="uid://7rg6tq354fka" path="res://scenes/world_environment.tscn" id="1_7fjm3"]
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_yskrh"]
 [ext_resource type="TileSet" uid="uid://bb4dkm2fv6jgw" path="res://resources/object_scenes.tres" id="2_5jgbv"]
 [ext_resource type="PackedScene" uid="uid://b6ufl0rqdaxid" path="res://scenes/player.tscn" id="2_rjugf"]
@@ -17,10 +18,15 @@
 [ext_resource type="PackedScene" uid="uid://cvnyvfiflreo5" path="res://scenes/objects/cash.tscn" id="16_r1li2"]
 [ext_resource type="Texture2D" uid="uid://c5umskbou5c5f" path="res://assets/fl_games.png" id="17_gkp66"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_t6q7u"]
+blend_mode = 1
+
 [sub_resource type="Resource" id="Resource_w0838"]
 script = ExtResource("16_3kj1c")
 
 [node name="Prison0" type="Node2D"]
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("1_7fjm3")]
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = ExtResource("1_yskrh")
@@ -74,6 +80,7 @@ position = Vector2(288, 320)
 position = Vector2(352, 320)
 
 [node name="FlGames" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_t6q7u")
 position = Vector2(256, 208)
 texture = ExtResource("17_gkp66")
 
@@ -92,7 +99,7 @@ metadata/_edit_group_ = true
 on = true
 
 [node name="Door" parent="ObjectsBehind" instance=ExtResource("4_pqiqs")]
-position = Vector2(528, 224)
+position = Vector2(560, 224)
 
 [node name="Labels" type="Node2D" parent="."]
 

@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1adj7g5nwdyw"]
+
+[sub_resource type="Environment" id="Environment_11wey"]
+background_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_strength = 1.5
+glow_blend_mode = 0
+
+[node name="Test" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 176.0
+offset_bottom = 80.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Control"]
+environment = SubResource("Environment_11wey")
+
+[node name="Label" type="Label" parent="Control"]
+modulate = Color(1.2, 1.2, 1.2, 1)
+use_parent_material = true
+layout_mode = 0
+offset_left = 48.0
+offset_top = 32.0
+offset_right = 88.0
+offset_bottom = 55.0
+text = "ON"
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 32.0
+offset_right = 152.0
+offset_bottom = 55.0
+text = "OFF"

@@ -1,0 +1,188 @@
+[gd_scene load_steps=18 format=3 uid="uid://buhf332hc67vy"]
+
+[ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="1_ikx3s"]
+[ext_resource type="PackedScene" uid="uid://bl5y3rxxuiwa" path="res://scenes/objects/light.tscn" id="2_1m6hl"]
+[ext_resource type="TileSet" uid="uid://bb4dkm2fv6jgw" path="res://resources/object_scenes.tres" id="2_ox5uq"]
+[ext_resource type="Texture2D" uid="uid://c5umskbou5c5f" path="res://assets/fl_games.png" id="3_odhxt"]
+[ext_resource type="PackedScene" uid="uid://c7uw4g4so23t8" path="res://scenes/objects/button.tscn" id="4_fag0o"]
+[ext_resource type="PackedScene" uid="uid://d3hs5w1ymderf" path="res://scenes/objects/door.tscn" id="5_yrrbe"]
+[ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="6_qob6y"]
+[ext_resource type="PackedScene" uid="uid://b6ufl0rqdaxid" path="res://scenes/player.tscn" id="7_e7sfk"]
+[ext_resource type="Script" path="res://scripts/player_camera.gd" id="8_ym3xy"]
+[ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="9_5ndog"]
+[ext_resource type="PackedScene" uid="uid://7smjtqjl6ctj" path="res://scenes/objects/thin_floor.tscn" id="10_lcq5k"]
+[ext_resource type="PackedScene" uid="uid://cxyripxsepv72" path="res://scenes/objects/piston.tscn" id="11_abrfs"]
+[ext_resource type="Script" path="res://scripts/alarm.gd" id="12_43c1g"]
+[ext_resource type="PackedScene" uid="uid://tqivnfeqeci2" path="res://scenes/objects/end_game_area.tscn" id="13_acddc"]
+[ext_resource type="Script" path="res://resources/check_records/prison0.gd" id="14_av4m4"]
+[ext_resource type="TileSet" uid="uid://csl1ftnr6oxto" path="res://resources/objects_tileset.tres" id="16_g6qmr"]
+
+[sub_resource type="Resource" id="Resource_w0838"]
+script = ExtResource("14_av4m4")
+
+[node name="Prison3" type="Node2D"]
+
+[node name="Background" type="TileMap" parent="."]
+modulate = Color(1, 0, 0, 1)
+tile_set = ExtResource("1_ikx3s")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 262144, 6, 65536, 262144, 6, 131072, 262144, 6, 196608, 262144, 6, 262144, 262144, 6, 327680, 262144, 6, 393216, 262144, 6, 458752, 262144, 6, 524288, 262144, 6, 589824, 262144, 6, 655360, 262144, 6, 1, 65536, 1, 65537, 262144, 6, 131073, 262144, 6, 196609, 262144, 6, 262145, 262144, 6, 327681, 262144, 6, 393217, 262144, 6, 458753, 262144, 6, 524289, 262144, 6, 589825, 262144, 6, 655361, 131072, 6, 65538, 262144, 6, 131074, 262144, 6, 196610, 262144, 6, 262146, 262144, 6, 327682, 262144, 6, 393218, 262144, 6, 458754, 262144, 6, 524290, 262144, 6, 589826, 262144, 6, 65539, 262144, 6, 131075, 262144, 6, 196611, 262144, 6, 262147, 262144, 6, 327683, 327680, 6, 393219, 262144, 6, 458755, 262144, 6, 524291, 262144, 6, 589827, 262144, 6, 655363, 262144, 6, 65540, 262144, 6, 131076, 196608, 6, 196612, 262144, 6, 262148, 262144, 6, 327684, 262144, 6, 393220, 262144, 6, 458756, 262144, 6, 524292, 262144, 6, 589828, 262144, 6, 655364, 262144, 6, 65541, 327680, 6, 131077, 262144, 6, 196613, 327680, 6, 262149, 262144, 6, 327685, 262144, 6, 393221, 262144, 6, 458757, 196608, 6, 524293, 393216, 6, 589829, 262144, 6, 655365, 393216, 6, 65542, 327680, 6, 131078, 262144, 6, 196614, 262144, 6, 262150, 393216, 6, 327686, 262144, 6, 393222, 327680, 6, 458758, 131072, 6, 524294, 262144, 6, 589830, 262144, 6, 655366, 393216, 6, 65543, 262144, 6, 131079, 393216, 6, 196615, 327680, 6, 262151, 327680, 6, 327687, 262144, 6, 393223, 65536, 6, 458759, 65536, 6, 524295, 262144, 6, 589831, 262144, 6, 655367, 458752, 6, 65544, 196608, 6, 131080, 262144, 6, 196616, 393216, 6, 262152, 262144, 6, 327688, 262144, 6, 393224, 262144, 6, 458760, 393216, 6, 524296, 262144, 6, 589832, 262144, 6, 655368, 327680, 6, 65545, 262144, 6, 131081, 393216, 6, 196617, 262144, 6, 262153, 327680, 6, 327689, 262144, 6, 393225, 262144, 6, 458761, 327680, 6, 524297, 262144, 6, 589833, 262144, 6, 655369, 458752, 6, 65546, 393216, 6, 131082, 262144, 6, 196618, 262144, 6, 262154, 262144, 6, 327690, 262144, 6, 393226, 262144, 6, 458762, 131072, 6, 524298, 262144, 6, 589834, 262144, 6, 655370, 262144, 6, 65547, 262144, 6, 131083, 327680, 6, 196619, 393216, 6, 262155, 262144, 6, 327691, 262144, 6, 393227, 262144, 6, 458763, 262144, 6, 524299, 262144, 6, 589835, 262144, 6, 655371, 458752, 6, 65548, 393216, 6, 131084, 262144, 6, 196620, 393216, 6, 262156, 196608, 6, 327692, 262144, 6, 393228, 262144, 6, 458764, 262144, 6, 524300, 262144, 6, 589836, 262144, 6, 655372, 262144, 6, 65549, 196608, 6, 131085, 262144, 6, 196621, 393216, 6, 262157, 327680, 6, 327693, 262144, 6, 393229, 327680, 6, 458765, 327680, 6, 524301, 262144, 6, 589837, 262144, 6, 655373, 0, 6, 65550, 262144, 6, 131086, 196608, 6, 196622, 262144, 6, 262158, 262144, 6, 327694, 262144, 6, 393230, 65536, 6, 458766, 393216, 6, 524302, 393216, 6, 589838, 262144, 6, 655374, 0, 6, 65551, 262144, 6, 131087, 262144, 6, 196623, 262144, 6, 262159, 393216, 6, 327695, 262144, 6, 393231, 262144, 6, 458767, 262144, 6, 524303, 262144, 6, 589839, 262144, 6, 655375, 0, 6, 65552, 262144, 6, 131088, 262144, 6, 196624, 262144, 6, 262160, 262144, 6, 327696, 262144, 6, 393232, 262144, 6, 458768, 262144, 6, 524304, 262144, 6, 589840, 262144, 6, 655376, 262144, 6, 65553, 262144, 6, 131089, 262144, 6, 196625, 262144, 6, 262161, 262144, 6, 327697, 262144, 6, 393233, 262144, 6, 458769, 327680, 6, 524305, 262144, 6, 589841, 262144, 6, 655377, 0, 6, 720896, 262144, 6, 720897, 196608, 6, 720899, 262144, 6, 720900, 262144, 6, 720901, 262144, 6, 720902, 262144, 6, 720903, 131072, 6, 720904, 131072, 6, 720905, 65536, 6, 720906, 393216, 6, 720907, 262144, 6, 720908, 262144, 6, 720909, 0, 6, 720910, 0, 6, 720911, 0, 6, 720912, 262144, 6, 720913, 0, 6, 655362, 131072, 6, 720898, 65536, 6)
+
+[node name="Ladder" type="TileMap" parent="."]
+modulate = Color(1, 0, 0, 1)
+tile_set = ExtResource("2_ox5uq")
+format = 2
+layer_0/tile_data = PackedInt32Array(196617, 0, 131072, 196616, 0, 131072, 327689, 0, 65536, 262153, 0, 65536, 262152, 0, 65536, 327688, 0, 65536, 458755, 0, 65536, 393219, 0, 65536, 327683, 0, 65536, 262147, 0, 65536, 196611, 0, 131072)
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Light" parent="Lights" instance=ExtResource("2_1m6hl")]
+position = Vector2(288, 192)
+
+[node name="Light3" parent="Lights" instance=ExtResource("2_1m6hl")]
+position = Vector2(288, 32)
+
+[node name="Light2" parent="Lights" instance=ExtResource("2_1m6hl")]
+position = Vector2(64, 32)
+
+[node name="Light4" parent="Lights" instance=ExtResource("2_1m6hl")]
+position = Vector2(160, 32)
+
+[node name="Light7" parent="Lights" instance=ExtResource("2_1m6hl")]
+position = Vector2(416, 32)
+
+[node name="Light8" parent="Lights" instance=ExtResource("2_1m6hl")]
+position = Vector2(480, 32)
+
+[node name="Light10" parent="Lights" instance=ExtResource("2_1m6hl")]
+position = Vector2(224, 320)
+
+[node name="Light12" parent="Lights" instance=ExtResource("2_1m6hl")]
+position = Vector2(64, 320)
+
+[node name="Light11" parent="Lights" instance=ExtResource("2_1m6hl")]
+position = Vector2(288, 320)
+
+[node name="Light13" parent="Lights" instance=ExtResource("2_1m6hl")]
+position = Vector2(352, 320)
+
+[node name="Light14" parent="Lights" instance=ExtResource("2_1m6hl")]
+position = Vector2(544, 224)
+
+[node name="FlGames" type="Sprite2D" parent="."]
+position = Vector2(448, 88)
+texture = ExtResource("3_odhxt")
+
+[node name="ObjectsBehind" type="Node2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+
+[node name="Button" parent="ObjectsBehind" node_paths=PackedStringArray("objects") instance=ExtResource("4_fag0o")]
+position = Vector2(80, 72)
+cache_id = "prison0_button_door"
+objects = [NodePath("../Door")]
+
+[node name="Door" parent="ObjectsBehind" instance=ExtResource("5_yrrbe")]
+position = Vector2(560, 256)
+
+[node name="Labels" type="Node2D" parent="."]
+modulate = Color(1.2, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Labels"]
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 112.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.815686, 0.592157, 0.443137, 1)
+theme_override_fonts/font = ExtResource("6_qob6y")
+theme_override_font_sizes/font_size = 15
+text = "BLOCK C"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 464.0
+offset_top = 248.0
+offset_right = 536.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0.815686, 0.592157, 0.443137, 1)
+theme_override_fonts/font = ExtResource("6_qob6y")
+theme_override_font_sizes/font_size = 15
+text = "EXIT"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." instance=ExtResource("7_e7sfk")]
+position = Vector2(64, 360)
+collision_mask = 17
+metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 576
+limit_bottom = 416
+script = ExtResource("8_ym3xy")
+
+[node name="Floor" type="TileMap" parent="."]
+modulate = Color(1, 0, 0, 1)
+tile_set = ExtResource("1_ikx3s")
+format = 2
+layer_0/name = "Floor"
+layer_0/tile_data = PackedInt32Array(65536, 131072, 1, 131072, 131072, 1, 196608, 262144, 2, 262144, 65536, 2, 524288, 65536, 0, 589824, 262144, 1, 655360, 131072, 1, 720896, 131072, 1, 262145, 327680, 1, 458753, 0, 1, 524289, 327680, 2, 589825, 65536, 2, 262146, 131072, 1, 327682, 131072, 1, 393218, 131072, 1, 458754, 131072, 1, 524290, 131072, 1, 589826, 131072, 2, 16, 327680, 1, 65552, 0, 1, 131088, 0, 1, 196624, 0, 1, 262160, 0, 1, 17, 65536, 1, 65553, 65536, 1, 131089, 65536, 1, 196625, 65536, 1, 262161, 65536, 1, 786432, 262144, 2, 786433, 65536, 0, 786434, 65536, 0, 3, 65536, 2, 786435, 65536, 0, 4, 65536, 2, 786436, 65536, 0, 5, 65536, 2, 786437, 65536, 0, 6, 327680, 1, 524294, 0, 1, 786438, 65536, 0, 7, 262144, 1, 524295, 262144, 2, 786439, 65536, 0, 8, 65536, 2, 524296, 65536, 0, 786440, 65536, 0, 9, 65536, 2, 524297, 65536, 0, 786441, 65536, 0, 10, 327680, 1, 524298, 327680, 2, 11, 262144, 1, 12, 65536, 2, 786444, 393216, 2, 13, 65536, 2, 786445, 65536, 1, 14, 65536, 2, 786446, 65536, 1, 15, 65536, 2, 786447, 65536, 1, 786448, 65536, 1, 786449, 65536, 1, 0, 262144, 1, 589833, 65536, 2, 589832, 65536, 2, 589831, 65536, 2, 589830, 0, 2, 786443, 65536, 0, 589834, 65536, 2, 786442, 65536, 0, 327681, 0, 1, 393217, 0, 1, 1, 65536, 2, 196609, 65536, 0, 196610, 131072, 0, 2, 65536, 2, 720908, 0, 4, 655373, 0, 4, 720909, 0, 5, 655374, 0, 5, 589838, 0, 4, 720910, 65536, 1, 720911, 65536, 1, 655375, 65536, 1, 589839, 65536, 0, 655376, 65536, 1, 720912, 65536, 1, 720913, 65536, 1, 655377, 65536, 1, 589841, 65536, 0, 589840, 65536, 0, 458759, 131072, 1, 393223, 131072, 1, 458758, 0, 1, 393222, 0, 1, 327686, 0, 1, 262150, 0, 1, 196615, 262144, 2, 196614, 0, 1, 589835, 131072, 2, 524299, 131072, 1, 458763, 131072, 1, 393227, 131072, 1, 327691, 131072, 1, 262155, 65536, 4, 65547, 131072, 1, 65546, 0, 1, 196618, 65536, 4, 393226, 0, 1, 458762, 0, 1, 393232, 0, 2, 393233, 65536, 2, 327696, 0, 1, 327697, 65536, 1, 327687, 262144, 1, 327690, 327680, 1, 262151, 65536, 1, 262154, 65536, 1, 393224, 262144, 4, 458760, 262144, 5, 393225, 393216, 4, 458761, 393216, 5)
+
+[node name="HiddenFloor" type="TileMap" parent="."]
+modulate = Color(1, 0, 0, 1)
+tile_set = ExtResource("9_5ndog")
+format = 2
+layer_0/tile_data = PackedInt32Array(131082, 0, 1, 131083, 131072, 1, 196618, 327680, 2, 196619, 131072, 1, 262155, 131072, 1, 65542, 0, 1, 131078, 0, 1, 65543, 131072, 1, 131079, 131072, 1, 262152, 65536, 1, 262153, 65536, 1, 327688, 65536, 2, 327689, 65536, 2, 196616, 65536, 0, 196617, 65536, 0)
+
+[node name="ObjectsFront" type="Node2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+
+[node name="Floor2" parent="ObjectsFront" instance=ExtResource("10_lcq5k")]
+position = Vector2(176, 104)
+
+[node name="Floor5" parent="ObjectsFront" instance=ExtResource("10_lcq5k")]
+position = Vector2(144, 104)
+
+[node name="Floor7" parent="ObjectsFront" instance=ExtResource("10_lcq5k")]
+position = Vector2(144, 264)
+
+[node name="Floor8" parent="ObjectsFront" instance=ExtResource("10_lcq5k")]
+position = Vector2(112, 264)
+
+[node name="Floor6" parent="ObjectsFront" instance=ExtResource("10_lcq5k")]
+position = Vector2(112, 104)
+
+[node name="Floor9" parent="ObjectsFront" instance=ExtResource("10_lcq5k")]
+position = Vector2(272, 104)
+
+[node name="Floor10" parent="ObjectsFront" instance=ExtResource("10_lcq5k")]
+position = Vector2(304, 104)
+
+[node name="Floor4" parent="ObjectsFront" instance=ExtResource("10_lcq5k")]
+position = Vector2(176, 264)
+
+[node name="Piston" parent="ObjectsFront" instance=ExtResource("11_abrfs")]
+position = Vector2(256, 352)
+
+[node name="Piston2" parent="ObjectsFront" instance=ExtResource("11_abrfs")]
+position = Vector2(320, 352)
+
+[node name="FloorLabels" type="Node2D" parent="."]
+
+[node name="Alarm" type="Node" parent="." node_paths=PackedStringArray("walls")]
+script = ExtResource("12_43c1g")
+walls = NodePath("../Background")
+
+[node name="EndGameArea" parent="." instance=ExtResource("13_acddc")]
+position = Vector2(600, 256)
+check_record = SubResource("Resource_w0838")
+
+[node name="Rails" type="TileMap" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(2.08165e-12, 8)
+tile_set = ExtResource("16_g6qmr")
+format = 2
+layer_0/tile_data = PackedInt32Array(1441813, 851970, 11, 1507349, 851970, 12, 1441814, 917506, 11, 1507350, 917506, 12, 1441815, 1048578, 11, 1507351, 1048578, 12, 1376280, 1114114, 10, 1441816, 1114114, 11, 1310745, 1114114, 10, 1376281, 1114114, 11, 1245210, 1114114, 10, 1310746, 1114114, 11, 1179675, 1114114, 10, 1245211, 1114114, 11, 1114140, 1114114, 10, 1179676, 1114114, 11, 1048605, 1179650, 9, 1114141, 1179650, 10, 1048606, 917506, 11, 1114142, 917506, 12, 1048607, 1441794, 9, 1114143, 1441794, 10)

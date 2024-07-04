@@ -6,7 +6,8 @@
 script = ExtResource("1_h70pe")
 order_id = 2
 level_name = "BLOCK C"
-scene_name = "prison0"
+scene_name = "prison3"
+scene2_name = "prison3-d"
 task0 = "Complete"
-task1 = "Collect all cash and comeplete level in under 30 seconds"
-task2 = "Complete under 10 seconds"
+task1 = "Find hidden artifact"
+task2 = "Complete without swapping dimenstions"

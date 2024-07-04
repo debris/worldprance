@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cv5sfua4e41yl"]
+[gd_scene load_steps=9 format=3 uid="uid://cv5sfua4e41yl"]
 
 [ext_resource type="TileSet" uid="uid://b85edn0lxsvdt" path="res://resources/frames.tres" id="1_so7vb"]
 [ext_resource type="Script" path="res://scenes/ui/select_level_cell.gd" id="1_w3utl"]
@@ -12,8 +12,6 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ig3qf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ocbb"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2uct"]
 
 [node name="SelectLevelCell" type="Control"]
 custom_minimum_size = Vector2(96, 96)
@@ -56,7 +54,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_mdmlw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_qwn6w")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ig3qf")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_8ocbb")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_h2uct")
 
 [connection signal="focus_entered" from="Button" to="." method="_on_button_focus_entered"]
 [connection signal="focus_exited" from="Button" to="." method="_on_button_focus_exited"]
