@@ -9,4 +9,4 @@ func _ready():
 	)
 
 func update_cash_label():
-	cash_label.text = str(State.get_collectible_count("cash"))
+	cash_label.text = str(100 * State.get_collectible_count("cash"))

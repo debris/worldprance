@@ -1,0 +1,162 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4bq0o3telmxq"]
+
+[ext_resource type="Script" path="res://scenes/ui/input_keys.gd" id="1_n305k"]
+[ext_resource type="TileSet" uid="uid://b85edn0lxsvdt" path="res://resources/frames.tres" id="1_p3jcr"]
+[ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="1_vtwv1"]
+[ext_resource type="Resource" uid="uid://dca2473f858e5" path="res://resources/inputs/default.tres" id="2_bvs8g"]
+[ext_resource type="Texture2D" uid="uid://y6lfg600nt7g" path="res://assets/buttons/button2_01.png" id="3_jlggp"]
+[ext_resource type="Texture2D" uid="uid://ca3gkghn84o8v" path="res://assets/buttons/button2_02.png" id="4_tjv8g"]
+[ext_resource type="Texture2D" uid="uid://cq02ol5ouw8sa" path="res://assets/buttons/button2_03.png" id="5_u3fks"]
+[ext_resource type="Texture2D" uid="uid://chynka7jlqug8" path="res://assets/buttons/button2_04.png" id="6_j2lxr"]
+
+[node name="InputKeys" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -448.0
+offset_bottom = -292.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n305k")
+input_keys = ExtResource("2_bvs8g")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_p3jcr")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 5, 1, 65537, 5, 2, 65537, 5, 3, 131073, 5)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 108.0
+offset_bottom = 34.0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 4
+metadata/_edit_group_ = true
+
+[node name="Jump" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="GridContainer/Jump"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_vtwv1")
+theme_override_font_sizes/font_size = 4
+text = "JUMP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite" type="Sprite2D" parent="GridContainer/Jump"]
+position = Vector2(8, 8)
+texture = ExtResource("6_j2lxr")
+
+[node name="Label2" type="Label" parent="GridContainer/Jump"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("1_vtwv1")
+theme_override_font_sizes/font_size = 8
+text = "_"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Use" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="Sprite" type="Sprite2D" parent="GridContainer/Use"]
+position = Vector2(8, 8)
+texture = ExtResource("4_tjv8g")
+
+[node name="Label4" type="Label" parent="GridContainer/Use"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_vtwv1")
+theme_override_font_sizes/font_size = 4
+text = "USE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="GridContainer/Use"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("1_vtwv1")
+theme_override_font_sizes/font_size = 8
+text = "e"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hit" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="Sprite" type="Sprite2D" parent="GridContainer/Hit"]
+position = Vector2(8, 8)
+texture = ExtResource("5_u3fks")
+
+[node name="Label6" type="Label" parent="GridContainer/Hit"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("1_vtwv1")
+theme_override_font_sizes/font_size = 8
+text = "q"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="GridContainer/Hit"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_vtwv1")
+theme_override_font_sizes/font_size = 4
+text = "HIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Alt" type="ColorRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+
+[node name="Sprite" type="Sprite2D" parent="GridContainer/Alt"]
+position = Vector2(8, 8)
+texture = ExtResource("3_jlggp")
+
+[node name="Label7" type="Label" parent="GridContainer/Alt"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("1_vtwv1")
+theme_override_font_sizes/font_size = 8
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="GridContainer/Alt"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_vtwv1")
+theme_override_font_sizes/font_size = 4
+text = "ALT"
+horizontal_alignment = 1
+vertical_alignment = 1
