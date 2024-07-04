@@ -20,47 +20,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.705882)
+color = Color(0, 0, 0, 0.941176)
 metadata/_edit_use_anchors_ = true
-
-[node name="GridContainer" type="GridContainer" parent="."]
-offset_top = 88.0
-offset_right = 576.0
-offset_bottom = 328.0
-theme_override_constants/v_separation = 16
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("1_pljk5")
-text = "GAME PAUSED
-EXIT?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ButtonYes" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(120, 32)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("1_pljk5")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ye4ac")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_8qmro")
-text = "YES"
-script = ExtResource("3_rvv2n")
-
-[node name="ButtonNo" type="Button" parent="GridContainer"]
-custom_minimum_size = Vector2(120, 32)
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("1_pljk5")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ye4ac")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_8qmro")
-text = "NO"
-script = ExtResource("3_rvv2n")
 
 [node name="RightPanel" parent="." instance=ExtResource("4_fhgl7")]
 offset_left = 456.0
@@ -69,5 +30,64 @@ offset_right = 576.0
 offset_bottom = 356.0
 level_data = ExtResource("5_vg4sf")
 
-[connection signal="pressed" from="GridContainer/ButtonYes" to="." method="_on_button_yes_pressed"]
-[connection signal="pressed" from="GridContainer/ButtonNo" to="." method="_on_button_no_pressed"]
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 120)
+layout_mode = 2
+theme_override_constants/v_separation = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_pljk5")
+text = "GAME PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonYes" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_pljk5")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ye4ac")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8qmro")
+text = "EXIT"
+script = ExtResource("3_rvv2n")
+
+[node name="ButtonRestart" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_pljk5")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ye4ac")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8qmro")
+text = "Restart"
+script = ExtResource("3_rvv2n")
+
+[node name="ButtonNo" type="Button" parent="CenterContainer/GridContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_pljk5")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ye4ac")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8qmro")
+text = "CANCEL"
+script = ExtResource("3_rvv2n")
+
+[connection signal="pressed" from="CenterContainer/GridContainer/ButtonYes" to="." method="_on_button_yes_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/ButtonRestart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="CenterContainer/GridContainer/ButtonNo" to="." method="_on_button_no_pressed"]

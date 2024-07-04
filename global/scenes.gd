@@ -1,5 +1,7 @@
 extends Node2D
 
+var last_level_data = LevelData
+
 func clear():
 	for child in get_children():
 		child.queue_free()
@@ -20,7 +22,11 @@ func goto_credits():
 	add_child(credits)
 
 func goto_level(level_data: LevelData):
+	last_level_data = level_data
 	clear()
 	var level = preload("res://scenes/level.tscn").instantiate()
 	level.level_data = level_data
 	add_child(level)
+
+func restart_last_level():
+	goto_level(last_level_data)

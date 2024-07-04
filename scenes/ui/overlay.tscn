@@ -45,6 +45,7 @@ _data = {
 }
 
 [node name="Overlay" type="CanvasLayer"]
+layer = 0
 script = ExtResource("1_kw5oj")
 
 [node name="LevelTimer" parent="." instance=ExtResource("3_t5qp1")]

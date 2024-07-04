@@ -76,7 +76,7 @@ position = Vector2(-1411.2, 0)
 curve = SubResource("Curve2D_hrjpf")
 
 [node name="Platform2" parent="EnvMovement" instance=ExtResource("12_7b4j6")]
-position = Vector2(455.04, 96)
+position = Vector2(499.076, 96)
 
 [node name="Cash" type="Node" parent="."]
 
