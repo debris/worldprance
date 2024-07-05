@@ -12,6 +12,6 @@ func _ready():
 
 func update_sprite():
 	if is_on:
-		texture = preload("res://assets/full_star.png")
+		modulate = Color.WHITE
 	else:
-		texture = preload("res://assets/empty_star.png")
+		modulate = Color.BLACK
