@@ -12,12 +12,16 @@
 [ext_resource type="Script" path="res://scenes/ui/start_menu_button.gd" id="10_qvrnf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eoshe"]
+content_margin_left = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rl0o5"]
+content_margin_left = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uv6j0"]
+content_margin_left = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpae6"]
+content_margin_left = 8.0
 
 [sub_resource type="Animation" id="Animation_vci24"]
 resource_name = "present"

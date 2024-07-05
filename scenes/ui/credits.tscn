@@ -9,12 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://bl5y3rxxuiwa" path="res://scenes/objects/light.tscn" id="6_ex1bb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uyhn7"]
+content_margin_left = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t30ip"]
+content_margin_left = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gecy"]
+content_margin_left = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urwd5"]
+content_margin_left = 8.0
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_3i88r")

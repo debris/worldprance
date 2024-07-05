@@ -6,6 +6,9 @@ func play_hover():
 func play_press():
 	play(preload("res://assets/sounds/press.mp3"))
 
+func play_jump():
+	play(preload("res://assets/sounds/jump.mp3"))
+
 func play(stream):
 	var audio_steam_player = AudioStreamPlayer.new()
 	audio_steam_player.stream = stream

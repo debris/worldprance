@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://b6ufl0rqdaxid"]
+[gd_scene load_steps=51 format=3 uid="uid://b6ufl0rqdaxid"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_of2uh"]
 [ext_resource type="Resource" uid="uid://dca2473f858e5" path="res://resources/inputs/default.tres" id="2_afasx"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bnl8mbpmtpu55" path="res://assets/characters/punk/punk_death.png" id="9_cd2lm"]
 [ext_resource type="Texture2D" uid="uid://dep2hhurtqwby" path="res://assets/characters/punk/punk_climb.png" id="11_hcsj1"]
 [ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="12_31ql4"]
-[ext_resource type="AudioStream" uid="uid://i5nphoo27lxr" path="res://assets/sounds/jump.mp3" id="13_sgfd0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cyygm"]
 radius = 9.0
@@ -178,21 +177,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
-tracks/3/type = "audio"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Jump")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("13_sgfd0")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_eqcic"]
 resource_name = "Idle"
@@ -273,21 +257,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [4]
 }
-tracks/3/type = "audio"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Jump")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("13_sgfd0")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_u7tqf"]
 resource_name = "Punch"
@@ -553,8 +522,6 @@ theme_override_fonts/font = ExtResource("12_31ql4")
 theme_override_font_sizes/font_size = 8
 horizontal_alignment = 1
 vertical_alignment = 2
-
-[node name="Jump" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
