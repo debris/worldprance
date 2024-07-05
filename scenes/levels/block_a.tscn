@@ -239,7 +239,4 @@ walls = NodePath("../Background")
 [node name="EndGameArea" parent="." instance=ExtResource("16_41n8p")]
 check_record = SubResource("Resource_w0838")
 
-[node name="EndGameArea" parent="EndGameArea" instance=ExtResource("16_41n8p")]
-check_record = SubResource("Resource_w0838")
-
 [editable path="ObjectsBehind/VaultDoor"]
