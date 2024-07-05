@@ -6,7 +6,7 @@
 script = ExtResource("1_1a0gs")
 order_id = 1
 level_name = "BLOCK B"
-scene_name = "prison0"
+scene_name = "block_a"
 scene2_name = ""
 task0 = "Complete2"
 task1 = "Collect all cash and comeplete level in under 30 seconds"

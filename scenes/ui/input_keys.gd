@@ -21,4 +21,5 @@ func _process(_delta):
 		hit_cell.modulate = Color.DARK_GRAY
 	if Input.is_action_pressed(input_keys.dimension):
 		alt_cell.modulate = Color.DARK_GRAY
+		State.collect("swap")
 	

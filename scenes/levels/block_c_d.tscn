@@ -15,11 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://cxyripxsepv72" path="res://scenes/objects/piston.tscn" id="11_abrfs"]
 [ext_resource type="Script" path="res://scripts/alarm.gd" id="12_43c1g"]
 [ext_resource type="PackedScene" uid="uid://tqivnfeqeci2" path="res://scenes/objects/end_game_area.tscn" id="13_acddc"]
-[ext_resource type="Script" path="res://resources/check_records/prison0.gd" id="14_av4m4"]
 [ext_resource type="TileSet" uid="uid://csl1ftnr6oxto" path="res://resources/objects_tileset.tres" id="16_g6qmr"]
+[ext_resource type="Script" path="res://resources/check_records/block_c.gd" id="17_ql77c"]
 
-[sub_resource type="Resource" id="Resource_w0838"]
-script = ExtResource("14_av4m4")
+[sub_resource type="Resource" id="Resource_jndvn"]
+script = ExtResource("17_ql77c")
 
 [node name="Prison3" type="Node2D"]
 
@@ -188,4 +188,4 @@ walls = NodePath("../Background")
 
 [node name="EndGameArea" parent="." instance=ExtResource("13_acddc")]
 position = Vector2(600, 256)
-check_record = SubResource("Resource_w0838")
+check_record = SubResource("Resource_jndvn")

@@ -1,5 +1,5 @@
 extends CheckRecord
-class_name CheckRecordPrison0
+class_name CheckRecordBlockA
 
 func check_record() -> LevelRecord:
 	var level_record = LevelRecord.new()
