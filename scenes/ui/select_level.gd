@@ -3,9 +3,9 @@ extends Node2D
 const LEVELS_PATH = "res://resources/levels"
 
 @onready var levels_grid = $GridContainer/GridContainer/ScrollContainer/LevelsGrid
-#@onready var right_panel = $GridContainer/GridContainer/RightPanel
 @onready var right_panel = $RightPanel
 @onready var back_button = $BackButton
+@onready var star_counter = $StarCounter
 
 func get_levels() -> Array:
 	var result = []
@@ -28,6 +28,7 @@ func get_levels() -> Array:
 
 func _ready():
 	var i = 0
+	var total_stars = 0
 
 	for level_data in get_levels():
 
@@ -45,6 +46,13 @@ func _ready():
 
 		i += 1
 
+		var level_record: LevelRecord = Records.get_level_record(level_data.level_name)
+		total_stars += level_record.completed()
+
+	for cell in levels_grid.get_children():
+		cell.current_stars = total_stars
+
+	star_counter.number = total_stars
 
 func cell_selected(level_data: LevelData):
 	right_panel.level_data = level_data

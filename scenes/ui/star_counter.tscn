@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b62kkq5hyv2bx"]
+
+[ext_resource type="Script" path="res://scenes/ui/star_counter.gd" id="1_m1akx"]
+[ext_resource type="PackedScene" uid="uid://cwgi7m472xbr3" path="res://scenes/ui/star.tscn" id="1_solsj"]
+[ext_resource type="Texture2D" uid="uid://jocn02fl6k6c" path="res://assets/full_star.png" id="2_wsjej"]
+[ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="3_aelqq"]
+
+[node name="StarCounter" type="Node2D"]
+script = ExtResource("1_m1akx")
+
+[node name="Star" parent="." instance=ExtResource("1_solsj")]
+position = Vector2(-16, 0)
+scale = Vector2(0.046875, 0.046875)
+texture = ExtResource("2_wsjej")
+is_on = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("3_aelqq")
+theme_override_font_sizes/font_size = 20
+text = "15"
+vertical_alignment = 1

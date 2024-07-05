@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://g8f6prk64quf"]
+[gd_scene load_steps=17 format=3 uid="uid://g8f6prk64quf"]
 
 [ext_resource type="Script" path="res://scenes/ui/select_level.gd" id="1_s1yok"]
 [ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="1_su8md"]
@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="6_e7bss"]
 [ext_resource type="Script" path="res://scenes/ui/start_menu_button.gd" id="7_xppvq"]
 [ext_resource type="PackedScene" uid="uid://bl5y3rxxuiwa" path="res://scenes/objects/light.tscn" id="8_7pvth"]
+[ext_resource type="PackedScene" uid="uid://b62kkq5hyv2bx" path="res://scenes/ui/star_counter.tscn" id="10_cs56h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk5rh"]
 
@@ -114,5 +115,8 @@ scale = Vector2(2, 2)
 [node name="Light2" parent="." instance=ExtResource("8_7pvth")]
 position = Vector2(416, 60)
 scale = Vector2(2, 2)
+
+[node name="StarCounter" parent="." instance=ExtResource("10_cs56h")]
+position = Vector2(512, 32)
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

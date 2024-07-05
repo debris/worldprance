@@ -3,13 +3,22 @@ extends Control
 signal cell_selected(data: LevelData)
 
 @export var level_data: LevelData 
+@export var current_stars: int:
+	set(value):
+		current_stars = value
+		if is_node_ready():
+			update_visibility()
 
 @onready var tilemap = $TileMap
-@onready var button = $Button
-@onready var label = $Label
-@onready var star = $Star
-@onready var star2 = $Star2
-@onready var star3 = $Star3
+@onready var unlocked_control = $Unlocked
+@onready var button = $Unlocked/Button
+@onready var label = $Unlocked/Label
+@onready var star = $Unlocked/Star
+@onready var star2 = $Unlocked/Star2
+@onready var star3 = $Unlocked/Star3
+
+@onready var locked_control = $Locked
+@onready var required_stars_label = $Locked/RequiredStarsLabel
 
 var sounds_on := false
 
@@ -22,6 +31,20 @@ func _ready():
 	star3.is_on = level_record.task2
 
 	enable_sound.call_deferred()
+	update_visibility()
+
+func update_visibility():
+	var is_unlocked = current_stars >= level_data.required_stars
+	unlocked_control.visible = is_unlocked
+	locked_control.visible = !is_unlocked
+	required_stars_label.text = str(current_stars) + "/" + str(level_data.required_stars)
+	if is_unlocked:
+		if button.has_focus():
+			tilemap.modulate = Color.GREEN
+		else:
+			tilemap.modulate = Color.WHITE
+	else:
+		tilemap.modulate = Color.DARK_GRAY
 
 func enable_sound():
 	sounds_on = true
@@ -38,7 +61,7 @@ func _on_button_mouse_exited():
 	pass
 
 func _on_button_focus_entered():
-	tilemap.modulate = Color.DARK_GRAY
+	tilemap.modulate = Color.GREEN
 	if sounds_on:
 		Sounds.play_hover()
 	cell_selected.emit(level_data)

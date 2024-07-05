@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_5hpnp")
 order_id = 8
+required_stars = 14
 level_name = "BLOCK M"
 scene_name = "block_a"
 scene2_name = ""

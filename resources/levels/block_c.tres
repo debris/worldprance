@@ -5,9 +5,10 @@
 [resource]
 script = ExtResource("1_h70pe")
 order_id = 2
+required_stars = 2
 level_name = "BLOCK C"
 scene_name = "block_c"
 scene2_name = "block_c_d"
 task0 = "Complete"
-task1 = "Find hidden artifact"
+task1 = "Find access card"
 task2 = "Complete without swapping dimenstions"

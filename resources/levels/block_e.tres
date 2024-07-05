@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_lqevs")
 order_id = 4
+required_stars = 6
 level_name = "BLOCK E"
 scene_name = "block_a"
 scene2_name = ""
