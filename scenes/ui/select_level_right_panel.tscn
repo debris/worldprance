@@ -17,17 +17,24 @@ tile_set = ExtResource("1_v70c0")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 524289, 0, 65536, 524289, 1, 131072, 524289, 1, 196608, 524289, 1, 262144, 524289, 1, 327680, 524289, 1, 1, 524289, 3, 2, 524289, 3, 3, 524289, 3, 327681, 524289, 4, 262145, 524289, 4, 196609, 524289, 4, 131073, 524289, 4, 65537, 524289, 4, 327682, 524289, 4, 262146, 524289, 4, 196610, 524289, 4, 131074, 524289, 4, 65538, 524289, 4, 327683, 524289, 4, 262147, 524289, 4, 196611, 524289, 4, 131075, 524289, 4, 65539, 524289, 4, 393216, 524289, 2, 393217, 524289, 5, 393218, 524289, 5, 393219, 524289, 5)
 
+[node name="TileMap2" type="TileMap" parent="."]
+position = Vector2(2.08165e-12, 16)
+tile_set = ExtResource("1_v70c0")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 524289, 2, 1, 524289, 5, 2, 524289, 5, 3, 524289, 5)
+
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 16.0
+offset_top = 8.0
 offset_right = 128.0
-offset_bottom = 48.0
+offset_bottom = 40.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_vjyhn")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 18
 text = "TITLE"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
