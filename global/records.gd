@@ -17,6 +17,7 @@ func save_level_record(level_name: String, level_record: LevelRecord):
 	record.task0 = level_record.task0 || existing.task0
 	record.task1 = level_record.task1 || existing.task1
 	record.task2 = level_record.task2 || existing.task2
+	record.cash = max(level_record.cash, existing.cash)
 	record.best_time = min(level_record.best_time, existing.best_time)
 
 	var filename = save_path(level_name)

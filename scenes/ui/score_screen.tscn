@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bh4x6tiko4ocx"]
+[gd_scene load_steps=18 format=3 uid="uid://bh4x6tiko4ocx"]
 
 [ext_resource type="PackedScene" uid="uid://7rg6tq354fka" path="res://scenes/world_environment.tscn" id="1_8gbaa"]
 [ext_resource type="Script" path="res://scenes/ui/score_screen.gd" id="1_shclt"]
@@ -18,6 +18,140 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uv6j0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cpae6"]
+
+[sub_resource type="Animation" id="Animation_vci24"]
+resource_name = "present"
+length = 6.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThisRecord/TimeLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThisRecord/CashLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThisRecord/Control:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ThisRecord/Control2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ThisRecord/Control3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_uh1yv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ThisRecord/TimeLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ThisRecord/CashLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ThisRecord/Control:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ThisRecord/Control2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ThisRecord/Control3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_foodi"]
+_data = {
+"RESET": SubResource("Animation_uh1yv"),
+"present": SubResource("Animation_vci24")
+}
 
 [node name="ScoreScreen" type="Node2D"]
 script = ExtResource("1_shclt")
@@ -60,12 +194,13 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
 [node name="TitleLabel" type="Label" parent="BestRecord"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(2.08165e-12, 36)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_mi7rf")
-theme_override_font_sizes/font_size = 12
-text = "BEST"
+theme_override_font_sizes/font_size = 8
+text = "BEST
+Score"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -121,16 +256,18 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
 [node name="TitleLabel" type="Label" parent="ThisRecord"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(2.08165e-12, 36)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_mi7rf")
-theme_override_font_sizes/font_size = 12
-text = "THIS"
+theme_override_font_sizes/font_size = 8
+text = "your
+score"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TimeLabel" type="Label" parent="ThisRecord"]
+visible = false
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -141,6 +278,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CashLabel" type="Label" parent="ThisRecord"]
+visible = false
 custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -151,6 +289,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Control" type="Control" parent="ThisRecord"]
+visible = false
 custom_minimum_size = Vector2(2.08165e-12, 24)
 layout_mode = 2
 
@@ -160,6 +299,7 @@ texture = ExtResource("6_t8hnt")
 is_on = true
 
 [node name="Control2" type="Control" parent="ThisRecord"]
+visible = false
 custom_minimum_size = Vector2(2.08165e-12, 24)
 layout_mode = 2
 
@@ -167,6 +307,7 @@ layout_mode = 2
 position = Vector2(24, 12)
 
 [node name="Control3" type="Control" parent="ThisRecord"]
+visible = false
 custom_minimum_size = Vector2(2.08165e-12, 24)
 layout_mode = 2
 
@@ -175,20 +316,18 @@ position = Vector2(24, 12)
 
 [node name="Info" type="GridContainer" parent="."]
 offset_left = 184.0
-offset_top = 111.0
+offset_top = 112.0
 offset_right = 512.0
 offset_bottom = 351.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
 [node name="TitleLabel" type="Label" parent="Info"]
-custom_minimum_size = Vector2(0, 24)
+custom_minimum_size = Vector2(2.08165e-12, 36)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("4_mi7rf")
-theme_override_font_sizes/font_size = 8
-text = "
-"
+theme_override_font_sizes/font_size = 12
 vertical_alignment = 1
 
 [node name="TimeLabel" type="Label" parent="Info"]
@@ -257,5 +396,10 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_cpae6")
 text = "BACK"
 alignment = 0
 script = ExtResource("10_qvrnf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_foodi")
+}
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
