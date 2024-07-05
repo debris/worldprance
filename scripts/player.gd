@@ -103,3 +103,6 @@ func _on_ladder_exited(_area: Area2D):
 func _on_danger_area_entered(_area: Area2D):
 	print_debug("danger")
 	dead = true
+
+func _on_enemy_area_entered(_area:Area2D):
+	dead = true

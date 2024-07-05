@@ -1,14 +1,14 @@
 extends Node
 class_name LookAt
 
-@export var player: Player
+@export var player: CharacterBody2D
 @export var sprite: Sprite2D
 
 func _process(_delta):
-	if player.dead:
+	if "dead" in player && player.dead:
 		return
 
-	var direction = Input.get_axis(player.input_keys.left, player.input_keys.right)
+	var direction = player.velocity.x
 	if direction > 0:
 		sprite.scale.x = 1.0		
 	elif direction < 0:

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Homeless" load_steps=2 format=3 uid="uid://dhks7uqyvt3l5"]
+
+[ext_resource type="Script" path="res://resources/homeless.gd" id="1_oial5"]
+
+[resource]
+script = ExtResource("1_oial5")
+sprite_path = "assets/characters/homeless/2"

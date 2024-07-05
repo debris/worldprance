@@ -1,5 +1,9 @@
 {
   "hidden_columns": {
+    "res://resources/homeless/": {
+      "resource_local_to_scene": true,
+      "resource_name": true
+    },
     "res://resources/inputs/": {
       "resource_local_to_scene": true,
       "resource_name": true
@@ -18,7 +22,8 @@
   "recent_paths": [
     "res://resources/inputs/",
     "res://resources/map/",
-    "res://resources/levels/"
+    "res://resources/levels/",
+    "res://resources/homeless/"
   ],
   "table_functions": {
     "filter": [
