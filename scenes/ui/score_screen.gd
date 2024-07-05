@@ -72,3 +72,6 @@ func _on_back_button_pressed():
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		Scenes.goto_level_select()
+
+func play_appear_sound():
+	Sounds.play_appear()
