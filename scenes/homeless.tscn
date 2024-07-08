@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://chd8vh8rywlax"]
 
 [ext_resource type="Script" path="res://scenes/homeless.gd" id="1_i2aye"]
-[ext_resource type="Texture2D" uid="uid://dwnyc0si0lnya" path="res://assets/characters/homeless/2/walk.png" id="3_1p07p"]
+[ext_resource type="Texture2D" uid="uid://b82nepr8n522x" path="res://assets/characters/homeless/1/walk.png" id="2_1b6t0"]
 [ext_resource type="Texture2D" uid="uid://dws477ri6tvv1" path="res://assets/characters/homeless/1/death.png" id="3_8b5ee"]
 [ext_resource type="Script" path="res://scripts/look_at.gd" id="3_q3u35"]
 [ext_resource type="Script" path="res://scripts/patrol.gd" id="5_iqbhd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q7p24"]
 radius = 9.0
-height = 32.0
+height = 31.0
 
 [sub_resource type="Animation" id="Animation_lleim"]
 length = 0.001
@@ -227,13 +227,14 @@ size = Vector2(16, 8)
 [node name="Homeless" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_i2aye")
+homeless_kind = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.08165e-12, 8)
 shape = SubResource("CapsuleShape2D_q7p24")
 
 [node name="WalkSprite" type="Sprite2D" parent="."]
-texture = ExtResource("3_1p07p")
+texture = ExtResource("2_1b6t0")
 offset = Vector2(10, 2.08165e-12)
 hframes = 6
 

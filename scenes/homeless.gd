@@ -1,16 +1,11 @@
 @tool
 extends CharacterBody2D
 
-@export_range(1, 6, 1) var homeless_kind: float:
+@export_range(1, 6, 1) var homeless_kind: float = 1:
 	set(value):
 		homeless_kind = value
-		homeless_type = load("res://resources/homeless/" + str(homeless_kind) + ".tres")
-
-var homeless_type: Homeless:
-	set(value):
-		homeless_type = value
 		if is_node_ready():
-			update_type()
+			update_sprites()
 
 var is_dead = false:
 	set(value):
@@ -24,11 +19,10 @@ var is_dead = false:
 @onready var patrol: Patrol = $Patrol
 
 func _ready():
-	update_type()
+	update_sprites()
 
-func update_type():
-	if homeless_type == null:
-		return
+func update_sprites():
+	var homeless_type = load("res://resources/homeless/" + str(homeless_kind) + ".tres")
 
 	walk_sprite.texture = load(homeless_type.sprite_path + "/walk.png")
 	death_sprite.texture = load(homeless_type.sprite_path + "/death.png")
