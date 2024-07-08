@@ -74,11 +74,12 @@ texture = ExtResource("4_4jkab")
 
 [node name="Button" parent="ObjectsBehind" node_paths=PackedStringArray("objects") instance=ExtResource("5_bmtia")]
 position = Vector2(80, 72)
-cache_id = "prison0_button_door"
+cache_id = "button_c"
 objects = [NodePath("../Door")]
 
 [node name="Door" parent="ObjectsBehind" instance=ExtResource("7_mtljw")]
 position = Vector2(560, 256)
+cache_id = "door_c"
 
 [node name="Card" parent="ObjectsBehind" instance=ExtResource("15_8bh3a")]
 position = Vector2(288, 224)

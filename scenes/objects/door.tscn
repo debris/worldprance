@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3hs5w1ymderf"]
+[gd_scene load_steps=10 format=3 uid="uid://d3hs5w1ymderf"]
 
+[ext_resource type="Script" path="res://scenes/objects/door.gd" id="1_a0j85"]
 [ext_resource type="Texture2D" uid="uid://8pb3vwpf5t2k" path="res://assets/objects/door.png" id="1_ie7q6"]
 [ext_resource type="Script" path="res://scripts/switchable.gd" id="2_6302s"]
 
@@ -100,6 +101,7 @@ size = Vector2(32, 40)
 size = Vector2(32, 24)
 
 [node name="Door" type="Node2D"]
+script = ExtResource("1_a0j85")
 
 [node name="Door" type="Sprite2D" parent="."]
 texture = ExtResource("1_ie7q6")

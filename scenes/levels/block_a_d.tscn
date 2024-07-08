@@ -124,6 +124,7 @@ on = true
 
 [node name="Door" parent="ObjectsBehind" instance=ExtResource("8_vympu")]
 position = Vector2(560, 224)
+cache_id = "door_a"
 
 [node name="Door2" parent="ObjectsBehind" instance=ExtResource("8_vympu")]
 position = Vector2(128, 64)
@@ -135,8 +136,8 @@ position = Vector2(208, 240)
 position = Vector2(464, 240)
 
 [node name="Button" parent="ObjectsBehind" node_paths=PackedStringArray("objects") instance=ExtResource("6_gwu7a")]
-position = Vector2(80, 72)
-cache_id = "prison0_button_door"
+position = Vector2(81, 72)
+cache_id = "button_a"
 objects = [NodePath("../Door")]
 
 [node name="Player" parent="." instance=ExtResource("10_6da88")]

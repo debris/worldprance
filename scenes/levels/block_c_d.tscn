@@ -81,11 +81,12 @@ modulate = Color(1, 0, 0, 1)
 
 [node name="Button" parent="ObjectsBehind" node_paths=PackedStringArray("objects") instance=ExtResource("4_fag0o")]
 position = Vector2(80, 72)
-cache_id = "prison0_button_door"
+cache_id = "button_c"
 objects = [NodePath("../Door")]
 
 [node name="Door" parent="ObjectsBehind" instance=ExtResource("5_yrrbe")]
 position = Vector2(560, 256)
+cache_id = "door_c"
 
 [node name="Labels" type="Node2D" parent="."]
 modulate = Color(1.2, 0, 0, 1)
