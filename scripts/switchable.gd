@@ -12,6 +12,7 @@ class_name Switchable
 @export var animation_player: AnimationPlayer
 
 func _ready():
+	set_instant(on)
 	if Engine.is_editor_hint():
 		return
 
