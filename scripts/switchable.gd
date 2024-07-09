@@ -12,6 +12,9 @@ class_name Switchable
 @export var animation_player: AnimationPlayer
 
 func _ready():
+	if Engine.is_editor_hint():
+		return
+
 	load_from_cache()
 
 func load_from_cache():
