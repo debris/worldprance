@@ -12,7 +12,6 @@ class_name Switchable
 @export var animation_player: AnimationPlayer
 
 func _ready():
-	set_instant(on)
 	if Engine.is_editor_hint():
 		return
 
@@ -24,6 +23,10 @@ func load_from_cache():
 		var value = State.get_from_cache(parent.cache_id)
 		if value != null:
 			set_instant(value)
+		else:
+			set_instant(on)
+	else:
+		set_instant(on)
 
 func save_to_cache():
 	var parent = get_parent()
