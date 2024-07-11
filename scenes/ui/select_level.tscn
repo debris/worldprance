@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://g8f6prk64quf"]
+[gd_scene load_steps=16 format=3 uid="uid://g8f6prk64quf"]
 
 [ext_resource type="Script" path="res://scenes/ui/select_level.gd" id="1_s1yok"]
 [ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="1_su8md"]
-[ext_resource type="PackedScene" uid="uid://7rg6tq354fka" path="res://scenes/world_environment.tscn" id="2_ujxh6"]
 [ext_resource type="TileSet" uid="uid://b85edn0lxsvdt" path="res://resources/frames.tres" id="3_d6ys6"]
 [ext_resource type="PackedScene" uid="uid://bedncojmylgkl" path="res://scenes/ui/select_level_right_panel.tscn" id="3_krga3"]
 [ext_resource type="Resource" uid="uid://bdy5rbe3tofc8" path="res://resources/levels/block_a.tres" id="4_dtneg"]
@@ -29,8 +28,6 @@ content_margin_left = 8.0
 
 [node name="SelectLevel" type="Node2D"]
 script = ExtResource("1_s1yok")
-
-[node name="WorldEnvironment" parent="." instance=ExtResource("2_ujxh6")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_su8md")

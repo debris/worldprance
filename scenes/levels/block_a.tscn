@@ -1,6 +1,5 @@
-[gd_scene load_steps=21 format=3 uid="uid://bteafu7enxuur"]
+[gd_scene load_steps=20 format=3 uid="uid://bteafu7enxuur"]
 
-[ext_resource type="PackedScene" uid="uid://7rg6tq354fka" path="res://scenes/world_environment.tscn" id="1_et8ht"]
 [ext_resource type="TileSet" uid="uid://c8fi2tw4s3bxp" path="res://resources/tileset.tres" id="2_78ltn"]
 [ext_resource type="TileSet" uid="uid://bb4dkm2fv6jgw" path="res://resources/object_scenes.tres" id="3_p66wf"]
 [ext_resource type="PackedScene" uid="uid://bl5y3rxxuiwa" path="res://scenes/objects/light.tscn" id="4_n54t6"]
@@ -26,8 +25,6 @@ blend_mode = 1
 script = ExtResource("17_tj4c2")
 
 [node name="Prison0" type="Node2D"]
-
-[node name="WorldEnvironment" parent="." instance=ExtResource("1_et8ht")]
 
 [node name="Background" type="TileMap" parent="."]
 tile_set = ExtResource("2_78ltn")
@@ -130,17 +127,21 @@ horizontal_alignment = 2
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Player" parent="." instance=ExtResource("10_fri3k")]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(128, 232)
-collision_mask = 17
-metadata/_edit_group_ = true
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = 0
 limit_top = 0
 limit_right = 576
 limit_bottom = 416
 script = ExtResource("11_0l8yq")
+
+[node name="Player" parent="." instance=ExtResource("10_fri3k")]
+position = Vector2(128, 232)
+collision_mask = 17
+metadata/_edit_group_ = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
 
 [node name="Homeless" parent="." instance=ExtResource("18_bw63k")]
 position = Vector2(224, 360)

@@ -36,6 +36,9 @@ func _physics_process(delta):
 
 		velocity.x = 0
 		var v_direction = Input.get_axis(input_keys.up, input_keys.down)
+		if OS.has_feature("mobile"):
+			v_direction =  Movement.direction.x
+
 		if v_direction < 0:
 			velocity.y = -LADDER_SPEED
 			global_position.x = ladder_position_x
@@ -63,7 +66,11 @@ func _physics_process(delta):
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+
 	var direction = Input.get_axis(input_keys.left, input_keys.right)
+	if OS.has_feature("mobile"):
+		direction =  Movement.direction.x
+
 	if direction:
 		velocity.x = direction * SPEED
 	else:
