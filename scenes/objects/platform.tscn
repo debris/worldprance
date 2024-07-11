@@ -24,7 +24,10 @@ position = Vector2(48, 16)
 shape = SubResource("RectangleShape2D_jj3yu")
 
 [node name="Light" parent="." instance=ExtResource("2_8sl5u")]
-position = Vector2(48, 32)
+position = Vector2(16, 32)
+
+[node name="Light2" parent="." instance=ExtResource("2_8sl5u")]
+position = Vector2(80, 32)
 
 [node name="ObjectsTileMap" type="TileMap" parent="."]
 position = Vector2(2.08165e-12, 8)
