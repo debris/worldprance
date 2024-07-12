@@ -13,9 +13,9 @@ func _process(_delta):
 	hit_cell.modulate = Color.WHITE
 	alt_cell.modulate = Color.WHITE
 
-	if Input.is_action_pressed(input_keys.jump):
+	if Actions.is_jump_pressed():
 		jump_cell.modulate = Color.DARK_GRAY
-	if Input.is_action_pressed(input_keys.use):
+	if Actions.is_use_pressed():
 		use_cell.modulate = Color.DARK_GRAY
 	if Input.is_action_pressed(input_keys.attack):
 		hit_cell.modulate = Color.DARK_GRAY

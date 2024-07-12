@@ -1,8 +1,19 @@
 extends CanvasLayer
 
+@onready var virtual_joystick = $VirtualJoystick
+@onready var virtual_pad = $VirtualPad
 @onready var cash_label: Label = $GridContainer/Control/CashLabel
+@onready var input_keys: Control = $InputKeys
 
 func _ready():
+	if InputManager.is_mobile():
+		input_keys.visible = false
+		InputManager.virtual_joystick = virtual_joystick
+		InputManager.virtual_pad = virtual_pad
+	else:
+		virtual_joystick.visible = false
+		virtual_pad.visible = false
+
 	update_cash_label()
 	State.collected.connect(func(_collectible, _value):
 		update_cash_label()
@@ -10,11 +21,3 @@ func _ready():
 
 func update_cash_label():
 	cash_label.text = str(100 * State.get_collectible_count("cash"))
-
-
-
-func _on_virtual_joystick_analogic_released():
-	Movement.direction = Vector2.ZERO
-
-func _on_virtual_joystick_analogic_chage(move: Vector2):
-	Movement.direction = move

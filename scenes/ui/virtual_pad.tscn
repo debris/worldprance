@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqtx6740kokc6"]
+
+[ext_resource type="Script" path="res://scenes/ui/virtual_pad.gd" id="1_xdp7q"]
+[ext_resource type="TileSet" uid="uid://b85edn0lxsvdt" path="res://resources/frames.tres" id="1_xv6rj"]
+[ext_resource type="Texture2D" uid="uid://y6lfg600nt7g" path="res://assets/buttons/button2_01.png" id="2_hcsiq"]
+[ext_resource type="Texture2D" uid="uid://chynka7jlqug8" path="res://assets/buttons/button2_04.png" id="2_tj7qp"]
+[ext_resource type="Texture2D" uid="uid://ca3gkghn84o8v" path="res://assets/buttons/button2_02.png" id="4_ivak0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3u65q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3wu5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aldpv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7voup"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jg7qd"]
+
+[node name="VirtualPad" type="Node2D"]
+script = ExtResource("1_xdp7q")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-24, -24)
+scale = Vector2(1.5, 1.5)
+tile_set = ExtResource("1_xv6rj")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 1, 0, 65535, 1, 1, 131071, 1, 2, -65536, 65537, 0, 65536, 65537, 2, -65535, 131073, 0, 1, 131073, 1, 65537, 131073, 2)
+
+[node name="BottomButton" type="Button" parent="."]
+offset_left = -16.0
+offset_top = 24.0
+offset_right = 16.0
+offset_bottom = 56.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3u65q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_o3wu5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_aldpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7voup")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jg7qd")
+icon = ExtResource("2_tj7qp")
+expand_icon = true
+
+[node name="LeftButton" type="Button" parent="."]
+offset_left = -56.0
+offset_top = -16.0
+offset_right = -24.0
+offset_bottom = 16.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3u65q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_o3wu5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_aldpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7voup")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jg7qd")
+icon = ExtResource("4_ivak0")
+expand_icon = true
+
+[node name="TopButton" type="Button" parent="."]
+offset_left = -16.0
+offset_top = -56.0
+offset_right = 16.0
+offset_bottom = -24.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3u65q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_o3wu5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_aldpv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7voup")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jg7qd")
+icon = ExtResource("2_hcsiq")
+expand_icon = true
+
+[connection signal="pressed" from="BottomButton" to="." method="_on_bottom_button_pressed"]
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="TopButton" to="." method="_on_top_button_pressed"]

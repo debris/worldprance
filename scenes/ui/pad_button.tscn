@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcn8ibps0bb86"]
+
+[ext_resource type="Texture2D" uid="uid://chynka7jlqug8" path="res://assets/buttons/button2_04.png" id="1_05qqf"]
+[ext_resource type="Script" path="res://scenes/ui/start_menu_button.gd" id="2_ugonu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xyor8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2nu8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1y28b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xssod"]
+
+[node name="Button" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -544.0
+offset_bottom = -292.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xyor8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_n2nu8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1y28b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xssod")
+icon = ExtResource("1_05qqf")
+expand_icon = true
+script = ExtResource("2_ugonu")

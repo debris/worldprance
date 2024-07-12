@@ -30,7 +30,8 @@ config/icon="res://assets/icon.svg"
 State="*res://global/state.gd"
 Sounds="*res://global/sounds.gd"
 Records="*res://global/records.gd"
-Movement="*res://global/movement.gd"
+Actions="*res://global/actions.gd"
+InputManager="*res://global/input_manager.gd"
 
 [display]
 

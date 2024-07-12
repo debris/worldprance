@@ -5,20 +5,20 @@ class_name AnimateMovement
 @export var animation_tree: AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
 
-func _process(_delta):
-	if Input.is_action_just_pressed(player.input_keys.attack):
+func _ready():
+	InputManager.attack.connect(func():
+		if player.dead:
+			return
 		animation_state.travel("Attack")
-		return
+	)
 
-	var h_direction = Input.get_axis(player.input_keys.left, player.input_keys.right)
-	var v_direction = Input.get_axis(player.input_keys.up, player.input_keys.down)
-
+func _process(_delta):
 	if player.dead:
 		animation_state.travel("Death")
 		return
 
 	if player.is_climbing:
-		if v_direction == 0:
+		if InputManager.get_direction().y == 0:
 			animation_tree.set("parameters/Climb/TimeScale/scale", 0)
 		else:
 			animation_tree.set("parameters/Climb/TimeScale/scale", 1)
@@ -32,7 +32,7 @@ func _process(_delta):
 			animation_state.travel("Jump")
 		return
 
-	if h_direction == 0:
+	if InputManager.get_direction().x == 0:
 		animation_state.travel("Idle")
 	else:
 		animation_state.travel("Run")

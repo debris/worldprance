@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdn2vd8u3ujd6"]
+[gd_scene load_steps=15 format=3 uid="uid://bdn2vd8u3ujd6"]
 
 [ext_resource type="Script" path="res://scenes/ui/overlay.gd" id="1_kw5oj"]
 [ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="2_hcxsp"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnra6h8666opf" path="res://scenes/ui/level_timer.tscn" id="3_t5qp1"]
 [ext_resource type="PackedScene" uid="uid://c4bq0o3telmxq" path="res://scenes/ui/input_keys.tscn" id="5_5s4sm"]
 [ext_resource type="Script" path="res://addons/virtual_joystick/scripts/virtual_joystick.gd" id="6_p8a8f"]
+[ext_resource type="PackedScene" uid="uid://dqtx6740kokc6" path="res://scenes/ui/virtual_pad.tscn" id="8_rwown"]
 
 [sub_resource type="Animation" id="Animation_6ehir"]
 length = 0.001
@@ -109,15 +110,15 @@ autoplay = "cash"
 
 [node name="InputKeys" parent="." instance=ExtResource("5_5s4sm")]
 offset_left = 224.0
-offset_top = 292.0
+offset_top = 294.0
 offset_right = -224.0
-offset_bottom = 0.0
+offset_bottom = 2.0
 
 [node name="VirtualJoystick" type="Node2D" parent="."]
-position = Vector2(80, 244)
+position = Vector2(80, 232)
 script = ExtResource("6_p8a8f")
 border = SubResource("GradientTexture2D_hvy8m")
 stick = SubResource("GradientTexture2D_vfbv3")
 
-[connection signal="analogic_chage" from="VirtualJoystick" to="." method="_on_virtual_joystick_analogic_chage"]
-[connection signal="analogic_released" from="VirtualJoystick" to="." method="_on_virtual_joystick_analogic_released"]
+[node name="VirtualPad" parent="." instance=ExtResource("8_rwown")]
+position = Vector2(488, 224)

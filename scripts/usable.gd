@@ -24,8 +24,8 @@ func _ready():
 			press_to_use.visible = false
 	)
 
-func _input(event):
-	for player in players_in_range.keys():
-		if event.is_action_pressed(player.input_keys.use):
+	InputManager.use.connect(func():
+		# TODO: check which player if more players are supported?
+		if !players_in_range.is_empty():
 			used.emit()
-			return
+	)

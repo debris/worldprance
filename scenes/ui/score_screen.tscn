@@ -1,6 +1,5 @@
-[gd_scene load_steps=17 format=3 uid="uid://bh4x6tiko4ocx"]
+[gd_scene load_steps=16 format=3 uid="uid://bh4x6tiko4ocx"]
 
-[ext_resource type="PackedScene" uid="uid://7rg6tq354fka" path="res://scenes/world_environment.tscn" id="1_8gbaa"]
 [ext_resource type="Script" path="res://scenes/ui/score_screen.gd" id="1_shclt"]
 [ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="2_g6n7y"]
 [ext_resource type="Resource" uid="uid://bdy5rbe3tofc8" path="res://resources/levels/block_a.tres" id="2_xx08w"]
@@ -185,8 +184,6 @@ _data = {
 [node name="ScoreScreen" type="Node2D"]
 script = ExtResource("1_shclt")
 level_data = ExtResource("2_xx08w")
-
-[node name="WorldEnvironment" parent="." instance=ExtResource("1_8gbaa")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_g6n7y")

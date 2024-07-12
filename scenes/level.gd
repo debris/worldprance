@@ -19,6 +19,10 @@ func _ready():
 		Scenes.goto_score_screen(level_data, level_record)
 	)
 
+	InputManager.special.connect(func():
+		swap_dimensions()
+	)
+
 func start():
 	if level_data == null:
 		return
@@ -46,19 +50,3 @@ func swap_dimensions():
 		loaded_a = null
 		loaded_b = load("res://scenes/levels/" + level_data.scene2_name +".tscn").instantiate()
 		add_child(loaded_b)
-
-func _process(_delta):
-	var loaded = null
-	if loaded_a != null:
-		loaded = loaded_a
-	else:
-		loaded = loaded_b
-
-	for child in loaded.get_children():
-		var player = child as Player
-		if player == null:
-			continue
-
-		if Input.is_action_just_pressed(player.input_keys.dimension):
-			swap_dimensions()
-	
