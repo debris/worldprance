@@ -15,6 +15,7 @@ func _ready():
 		return
 
 	usable.used.connect(func():
+		Sounds.play_press()
 		propagate_to_connected_objects()
 	)
 	

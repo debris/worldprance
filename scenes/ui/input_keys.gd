@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 @export var input_keys: GameInput
 
@@ -7,19 +7,25 @@ extends Control
 @onready var hit_cell: Control = $GridContainer/Hit
 @onready var alt_cell: Control = $GridContainer/Alt
 
-func _process(_delta):
-	jump_cell.modulate = Color.WHITE
-	use_cell.modulate = Color.WHITE
-	hit_cell.modulate = Color.WHITE
-	alt_cell.modulate = Color.WHITE
+func _ready():
+	InputManager.jump.connect(func():
+		modulate_press(jump_cell)
+	)
 
-	if Actions.is_jump_pressed():
-		jump_cell.modulate = Color.DARK_GRAY
-	if Actions.is_use_pressed():
-		use_cell.modulate = Color.DARK_GRAY
-	if Input.is_action_pressed(input_keys.attack):
-		hit_cell.modulate = Color.DARK_GRAY
-	if Input.is_action_pressed(input_keys.dimension):
-		alt_cell.modulate = Color.DARK_GRAY
-		State.collect("swap")
-	
+	InputManager.use.connect(func():
+		modulate_press(use_cell)
+	)
+
+	InputManager.attack.connect(func():
+		modulate_press(hit_cell)
+	)
+
+	InputManager.special.connect(func():
+		modulate_press(alt_cell)
+	)
+
+func modulate_press(control: Control):
+	var tween = create_tween()
+	tween.tween_property(control, "modulate", Color.DARK_GRAY, 0.01)
+	tween.tween_property(control, "modulate", Color.DARK_GRAY, 0.3)
+	tween.tween_property(control, "modulate", Color.WHITE, 0.01)

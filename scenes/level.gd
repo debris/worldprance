@@ -50,3 +50,5 @@ func swap_dimensions():
 		loaded_a = null
 		loaded_b = load("res://scenes/levels/" + level_data.scene2_name +".tscn").instantiate()
 		add_child(loaded_b)
+
+	Sounds.play_press()

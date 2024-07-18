@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var virtual_joystick = $VirtualJoystick
 @onready var virtual_pad = $VirtualPad
 @onready var cash_label: Label = $GridContainer/Control/CashLabel
-@onready var input_keys: Control = $InputKeys
+@onready var input_keys: Node2D = $InputKeys
 
 func _ready():
 	if InputManager.is_mobile():

@@ -109,10 +109,7 @@ libraries = {
 autoplay = "cash"
 
 [node name="InputKeys" parent="." instance=ExtResource("5_5s4sm")]
-offset_left = 224.0
-offset_top = 294.0
-offset_right = -224.0
-offset_bottom = 2.0
+position = Vector2(288, 324)
 
 [node name="VirtualJoystick" type="Node2D" parent="."]
 position = Vector2(80, 232)
