@@ -46,3 +46,9 @@ static func goto_score_screen(level_data: LevelData, this_record: LevelRecord):
 	score_screen.level_data = singleton.last_level_data
 	score_screen.this_record = this_record
 	singleton.center.add_child(score_screen)
+
+static func goto_pause_screen():
+	singleton.get_tree().paused = true
+	var game_paused = preload("res://scenes/ui/game_paused.tscn").instantiate()
+	singleton.get_tree().current_scene.add_child(game_paused)
+	game_paused.right_panel.level_data = singleton.last_level_data

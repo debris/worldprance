@@ -21,3 +21,7 @@ func _ready():
 
 func update_cash_label():
 	cash_label.text = str(100 * State.get_collectible_count("cash"))
+
+
+func _on_pause_button_pressed():
+	Scenes.goto_pause_screen()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdn2vd8u3ujd6"]
+[gd_scene load_steps=19 format=3 uid="uid://bdn2vd8u3ujd6"]
 
 [ext_resource type="Script" path="res://scenes/ui/overlay.gd" id="1_kw5oj"]
 [ext_resource type="FontFile" uid="uid://ci0pbhtb65wdp" path="res://assets/CyberpunkCraftpixPixel.otf" id="2_hcxsp"]
@@ -64,6 +64,14 @@ gradient = SubResource("Gradient_b4mw4")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43sj7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qe2od"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e60yh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ocuxc"]
+
 [node name="Overlay" type="CanvasLayer"]
 layer = 0
 script = ExtResource("1_kw5oj")
@@ -119,3 +127,18 @@ stick = SubResource("GradientTexture2D_vfbv3")
 
 [node name="VirtualPad" parent="." instance=ExtResource("8_rwown")]
 position = Vector2(488, 224)
+
+[node name="PauseButton" type="Button" parent="."]
+offset_left = 496.0
+offset_top = 8.0
+offset_right = 560.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("2_hcxsp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_43sj7")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qe2od")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_e60yh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ocuxc")
+action_mode = 0
+text = "PAUSE"
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
