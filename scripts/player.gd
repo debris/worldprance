@@ -9,7 +9,7 @@ class_name Player
 const SPEED = 160.0
 const JUMP_VELOCITY = -310.0
 const LADDER_SPEED = 64.0
-const VERTICAL_MOVE_THRESHOLD = 0.2
+const VERTICAL_MOVE_THRESHOLD = 0.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
