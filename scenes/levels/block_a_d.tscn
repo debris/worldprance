@@ -127,7 +127,7 @@ cache_id = "door_a"
 position = Vector2(128, 64)
 
 [node name="Box" parent="ObjectsBehind" instance=ExtResource("5_umsd8")]
-position = Vector2(208, 240)
+position = Vector2(232, 239)
 
 [node name="Box2" parent="ObjectsBehind" instance=ExtResource("5_umsd8")]
 position = Vector2(464, 240)

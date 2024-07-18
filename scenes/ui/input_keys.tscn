@@ -20,8 +20,9 @@ layer_0/tile_data = PackedInt32Array(-2, 1, 5, -1, 65537, 5, -65536, 65537, 5, -
 
 [node name="GridContainer" type="GridContainer" parent="."]
 offset_left = -44.0
-offset_top = -24.0
+offset_top = -22.0
 offset_right = 44.0
+offset_bottom = 2.0
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 4

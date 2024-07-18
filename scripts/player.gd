@@ -76,8 +76,9 @@ func _physics_process(delta):
 	# pushing boxes
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
-		if c.get_collider() is RigidBody2D:
-			c.get_collider().apply_central_impulse(-c.get_normal() * 25.0)
+		var collider = c.get_collider()
+		if collider is Box && global_position.y - 5.0 < collider.global_position.y && global_position.y + 5 > collider.global_position.y:
+			collider.velocity.x = direction * SPEED
 
 func load_player_data():
 	var data = State.get_player_data(player_name)

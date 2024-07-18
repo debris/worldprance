@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca7k4vf37dnjq"]
+[gd_scene load_steps=4 format=3 uid="uid://ca7k4vf37dnjq"]
 
 [ext_resource type="TileSet" uid="uid://c2fad3nflt347" path="res://resources/tileset_no_physics.tres" id="1_21pke"]
+[ext_resource type="Script" path="res://scenes/objects/box.gd" id="1_c5uum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ki6r8"]
 size = Vector2(32, 32)
 
-[node name="Box" type="RigidBody2D"]
+[node name="Box" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 19
+script = ExtResource("1_c5uum")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ki6r8")
